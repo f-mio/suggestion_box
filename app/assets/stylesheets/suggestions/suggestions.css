@@ -1,0 +1,16 @@
+
+.main{
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.suggestions-filed{
+  width: 75%;
+  background-color: blueviolet;
+}
+
+.right-bar{
+  width: 75%;
+  background-color: azure;
+}

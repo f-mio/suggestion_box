@@ -1,0 +1,24 @@
+<div class="header">
+  <div class="left-header">
+    <h1 class="header-title">Suggestions Box</h1>
+  </div>
+  <div class="right-header">
+    <div class="header-search-area">
+      <div class="header-search">
+        <div class="search-form"></div>
+        <div class="search-btn"></div>
+        <%# 本番は下記の検索フォームを入れ込む %>
+        <%#= form_with "#", root_path , placeholder: "ワード検索" , class:"header-search", local: true do |f| %>
+          <%#= f.text_field :keyword, class:search-form %>
+          <%#= f.submit class:"search-btn" %>
+        <%# end %>
+      </div>
+      <div class="header-categories">
+        <p class="header-category">時期</p>
+        <p class="header-category">カテゴリー</p>
+        <p class="header-category">部署</p>
+        <p class="header-category">評価</p>
+      </div>
+    </div>
+  </div>
+</div>

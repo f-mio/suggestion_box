@@ -1,4 +1,4 @@
-<%= render "layouts/header" %>
+<%= render "shared/header" %>
 
 <div class="main">
   <div class="suggestions-field">
@@ -17,7 +17,7 @@
         <img class="after-image" src="http://13.113.75.99/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f27ff4d3da87637b45a1f33063c5f7fccf92babd/U-Net_RGB_Loss_200epoch_20200927.png">
       </div>
       <div class="suggestion-bottom">
-        <b>製造部Z課　Aさん</b>
+        <b>総務部企画課　Aさん</b>
       </div>
     </div>
 
@@ -32,11 +32,11 @@
         </div>
       </div>
       <div class="suggestion-middle">
-        <img src="~/images/free/poxabay/businessman-3492380_1920.jpeg" class="after-image">
         <div class="before-image"></div>
+        <div class="after-image"></div>
       </div>
       <div class="suggestion-bottom">
-        <b>製造部Z課　Aさん</b>
+        <b>製造部Z課　Bさん</b>
       </div>
     </div>
 
@@ -55,18 +55,38 @@
         <div class="before-image"></div>
       </div>
       <div class="suggestion-bottom">
-        <b>製造部Z課　Aさん</b>
+        <b>製造部Z課　Cさん</b>
       </div>
     </div>
+    
+    <div class="suggestion">
+      <div class="suggestion-top">
+        <div class="suggestion-title-and-point">
+          <p class="title"><b>テストタイトル</b></p>
+          <p class="evaluated-point">80点　</p>
+        </div>
+        <div class="suggestion-category-index">
+          category　：　新規治具の提案
+        </div>
+      </div>
+      <div class="suggestion-middle">
+        <img class="before-image" src="http://13.113.75.99/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f27ff4d3da87637b45a1f33063c5f7fccf92babd/U-Net_RGB_Loss_200epoch_20200927.png" alt="改善前">
+        <img class="after-image" src="http://13.113.75.99/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f27ff4d3da87637b45a1f33063c5f7fccf92babd/U-Net_RGB_Loss_200epoch_20200927.png">
+      </div>
+      <div class="suggestion-bottom">
+        <b>開発センター　Dさん</b>
+      </div>
+    </div>
+
     <%# if @suggestions.length % 3 == 1 %>
       <div class="dummy-suggestion"></div>
       <div class="dummy-suggestion"></div>
     <%# elsif @suggestions.length % 3 == 2 %>
-      <div class="dummy-suggestion"></div>
+      <!-- div class="dummy-suggestion" ></div-->
     <%# end %>
 
   </div>
 
 </div>
 
-<%= render "layouts/footer" %>
+<%= render "shared/footer" %>

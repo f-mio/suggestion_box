@@ -1,0 +1,54 @@
+<div class="new-suggestion">
+  <%= form_with model: @suggestion do |f| %>
+    <div class="new-suggestion-top">
+      <div class="new-suggestion-top-left">
+        <p class="input-label">
+          タイトル
+          <span>必須</span>
+        </p>
+        <%= f.text_field :title, class:"suggestion-input-form", id:"suggestion-title", placeholder:"タイトルを入力してください" %>
+        <p class="input-label">
+          カテゴリー
+          <span>必須</span>
+        </p>
+        <%= f.text_field :category, class:"suggestion-input-form", id:"suggestion-category", placeholder:"カテゴリーを選択してください" %>
+        <p class="input-label">
+          ターゲット
+          <span>必須</span>
+        </p>
+        <%= f.text_field :target_location, class:"suggestion-input-target", id:"suggestion-target-1", placeholder:"選択してください"%>
+        <%= f.text_field :target_location, class:"suggestion-input-target", id:"suggestion-target-2", placeholder:"選択してください"%>
+        <%= f.text_field :target_location, class:"suggestion-input-target", id:"suggestion-target-3", placeholder:"選択してください"%>
+      </div>
+      <div class="new-suggestion-top-right">
+        <div class="new-suggestion-map">dummy</div>
+      </div>
+    </div>
+    <div class="new-suggestion-explanation-area">
+      <div class="new-suggestion-explanation">
+        <p class="input-label">
+          ＜現状の問題点＞
+          <span>必須</span>
+        </p>
+        <%= f.text_area :issue, class:"suggestion-explanation-box", id:"suggestion-issue", placeholder:"現状の問題点を記載してください", rows:"5", maxlength:"600" %>
+        <div class="new-suggestion-image-area"></div>
+      </div>
+      <div class="new-suggestion-explanation">
+        <p class="input-label">
+          ＜あるべき姿,理想＞
+          <span>必須</span>
+        </p>
+        <%= f.text_area :ideal, class:"suggestion-explanation-box", id:"suggeation-ideal", placeholder:"理想とする状態、もしくは改善後の状態について記載してください", rows:"5", maxlength:"600" %>
+      </div>
+    </div>
+    <div class="new-suggestion-effect">
+      <p class="input-label">
+        ＜現状の問題点＞
+        <span>必須</span>
+      </p>
+      <%= f.text_area :ideal, class:"suggestion-explanation-box", id:"suggeation-ideal", placeholder:"理想とする状態、もしくは改善後の状態について記載してください", rows:"5", maxlength:"600" %>
+    </div>
+
+    <%= f.submit "提出", class:"submit-btn" %>
+  <% end %>
+</div>

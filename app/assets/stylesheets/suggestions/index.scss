@@ -1,0 +1,100 @@
+/* suggestions index css */
+
+.main{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.suggestions-field{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.suggestion{
+  width: calc((100% - 100px) / 3);
+//  height: 300px;
+  background-color: #E8F6F7;
+  margin: 20px 0;
+  border: solid 1px aquamarine;
+}
+
+.dummy-suggestion{
+  width: calc((100% - 100px) / 3);
+  margin: 20px 0;
+}
+
+.suggestion-top{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.suggestion-title-and-point{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.suggestion-category-index{
+  padding: 3px 0px 3px 25px ;
+}
+
+.point-better{
+  color: blue;
+}
+
+.point-great{
+  color: red;
+}
+
+.suggestion-middle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: no-wrap;
+}
+
+.before-image{
+  width: 45%;
+//  height: 200px;
+  margin: 5px;
+}
+
+.after-image{
+  width: 45%;
+//  height: 200px;
+  padding: 5px;
+}
+
+.suggestion-bottom{
+  text-align: center;
+}
+
+
+
+
+@media (max-width: 1000px) {
+  .suggestion{
+    width: 80%;
+    background-color: azure;
+  }
+  p {
+    font-size: 25px;
+  }
+}
+
+/* スマホ表示時 */
+/*
+@media (max-width: 500px) {
+  p {
+    font-size: 20px;
+  }
+}
+
+*/

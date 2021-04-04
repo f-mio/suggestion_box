@@ -1,0 +1,35 @@
+/* footer css */
+
+.footer{
+  width: 100vw;
+  height: 100px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.footer-top{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-left{
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-right{
+  width: 50vw;
+  text-align: center;
+}
+
+.footer-bottom{
+  margin: 20px 0;
+  align-self: center;
+  padding-bottom: 1px;
+}

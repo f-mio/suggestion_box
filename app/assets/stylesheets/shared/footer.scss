@@ -2,14 +2,19 @@
 
 .footer{
   width: 100vw;
-  height: 100px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   justify-content: center;
   align-items: flex-end;
-  background-image: linear-gradient(30deg,skyblue 20%, aquamarine 60%);
+//  background-image: linear-gradient(30deg,skyblue 20%, aquamarine 60%);
+  background-image: image-url("suggestionbox_footer_image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: black;
+  font-size: 24px;
 }
 
 .footer-top{

@@ -84,9 +84,12 @@
     <%# elsif @suggestions.length % 3 == 2 %>
       <!-- div class="dummy-suggestion" ></div-->
     <%# end %>
-
   </div>
-
 </div>
+
+<%= link_to(new_suggestion_path, class: 'suggestion-btn') do %>
+  <span class='suggestion-btn-text'>提案する</span>
+  <%= image_tag 'comment.png', size: '60x90', class: "suggestion-btn-icon" %>
+<% end %>
 
 <%= render "shared/footer" %>

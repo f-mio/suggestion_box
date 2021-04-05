@@ -17,7 +17,7 @@
 .new-suggestion-top-left{
   width: 70%;
   height: 250px;
-  background-color: blueviolet;
+/*  background-color: blueviolet; */
   padding: 10px 20px;
 }
 
@@ -35,7 +35,7 @@
 .new-suggestion-top-right{
   width: 30%;
   height: 250px;
-  background-color: burlywood;
+/*  background-color: burlywood; */
   padding: 10px 20px;
 }
 
@@ -65,20 +65,31 @@
   flex-wrap: nowrap;
 }
 
-.suggestion-image{
-  width: 40%;
+.image-file{
+  margin-left: 30px;
 }
 
-
 .new-suggestion-effect{
-  margin: 15px 30px;
+  margin: 20px 30px;
+}
+
+.suggestion-submit{
+  display: flex;
+  justify-content: center;
 }
 
 .submit-btn{
-  width: 150px;
-  height: 80px;
-  font-size: 50px;
-  background-color: cornflowerblue;
-  border: solid 1px black;
+  width: 170px;
+  height: 40px;
+  font-size: 25px;
+  background-color: skyblue;
+  border: solid 2px slategrey;
+  border-radius: 10px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   align-self: center;
+}
+
+.submit-btn:hover{
+  background-color: lightsalmon;
 }

@@ -3,12 +3,13 @@
 .footer{
   width: 100vw;
   height: 100px;
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   justify-content: center;
   align-items: flex-end;
+  background-image: linear-gradient(30deg,skyblue 20%, aquamarine 60%);
+  color: black;
 }
 
 .footer-top{

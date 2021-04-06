@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(version: 2021_03_29_125800) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "corporate_no", default: "", null: false
-    t.string "name", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "family_name", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

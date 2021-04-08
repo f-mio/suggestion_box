@@ -19,9 +19,9 @@
             ターゲット
             <span>必須</span>
           </p>
-          <%= f.text_field :target_location, class:"suggestion-input-target", id:"suggestion-target-1", placeholder:"部門選択蘭"%>
-          <%= f.text_field :target_location, class:"suggestion-input-target", id:"suggestion-target-2", placeholder:"所在地選択欄"%>
-          <%= f.text_field :target_location, class:"suggestion-input-target", id:"suggestion-target-3", placeholder:"対象選択欄"%>
+          <%= f.text_field :location_id, class:"suggestion-input-target", id:"suggestion-location", placeholder:"部門選択蘭"%>
+          <%= f.text_field :place_id, class:"suggestion-input-target", id:"suggestion-place", placeholder:"所在地選択欄"%>
+          <%= f.text_field :target, class:"suggestion-input-target", id:"suggestion-target", placeholder:"対象選択欄"%>
         </div>
         <div class="new-suggestion-top-right">
           <div class="new-suggestion-map">dummy image</div>
@@ -52,7 +52,7 @@
           　　＜改善効果＞
           <span>必須</span>
         </p>
-        <%= f.text_area :ideal, class:"suggestion-explanation-box", id:"suggeation-ideal", placeholder:"理想とする状態、もしくは改善後の状態について記載してください", rows:"5", maxlength:"600" %>
+        <%= f.text_area :effect, class:"suggestion-explanation-box", id:"suggeation-effect", placeholder:"理想とする状態、もしくは改善後の状態について記載してください", rows:"5", maxlength:"600" %>
       </div>
       <div class="suggestion-submit">
         <%= f.submit "修正", class:"submit-btn" %>

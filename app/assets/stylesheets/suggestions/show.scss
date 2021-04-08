@@ -1,0 +1,96 @@
+
+.show-title{
+  font-size: 40px;
+  text-align: center;
+}
+
+.show-suggestion {
+  display: flex;
+  flex-direction: column;
+//  background-image: image-url("xxxx");
+//  background-position: center;
+//  background-size: cover;
+//  background-repeat: no-repeat;
+  font-weight: 500;
+}
+
+.background-mask{
+  background: rgb(255, 255, 255, 0.35);
+}
+
+.show-suggestion-top{
+  display: flex;
+  padding-top: 10px;
+}
+
+.show-suggestion-top-left{
+  width: 70%;
+  height: 250px;
+  padding: 10px 20px;
+}
+
+.show-suggestion-top-right{
+  width: 30px;
+  height: 250px;
+}
+
+.show-text-box{
+  width: 350px;
+  height: 30px;
+  margin: 10px 30px;
+  padding-left: 1px;
+  border: solid 1px black;
+}
+
+// newのsuggestion-mapを使う
+
+.show-target-field{
+  margin: 10px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.show-target-form{
+  width: 350px;
+  height: 30px;
+  padding-left: 1px;
+  border: solid 1px black;
+}
+
+.show-suggestion-explanation-area{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 20px;
+}
+
+.show-suggestion-explanation{
+  width: 45%;
+}
+
+.show-suggestion-explanation-box{
+  width: 95%;
+  height: 150px;
+}
+
+.show-suggestion-image-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.image-file{
+  margin-left: 30px;
+}
+
+
+.show-suggestion-explanation-box{
+  margin-top: 10px;
+  width: 95%;
+  border: solid 1px black;
+}
+
+.show-suggestion-effect{
+  margin-left: 20px 30px;
+}

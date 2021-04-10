@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_080616) do
   end
 
   add_foreign_key "departments", "parent_departments"
+  add_foreign_key "evaluations", "parent_departments"
   add_foreign_key "evaluations", "suggestions"
   add_foreign_key "results", "evaluations"
   add_foreign_key "suggestions", "departments"

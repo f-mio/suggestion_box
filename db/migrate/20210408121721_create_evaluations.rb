@@ -5,6 +5,7 @@ class CreateEvaluations < ActiveRecord::Migration[6.0]
       t.integer    :evaluation_score,  null: false
       t.text       :comment,           null: false
       t.integer    :user_id,           null: false
+      t.references :parent_department, null: false
 
       t.timestamps
     end

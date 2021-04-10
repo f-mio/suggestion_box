@@ -4,7 +4,7 @@ class CreateSuggestions < ActiveRecord::Migration[6.0]
       t.string     :title,        null: false
       t.text       :issue,        null: false
       t.text       :ideal,        null: false
-      t.references :category,     null: false
+      t.integer    :category_id,  null: false
       t.integer    :location_id,  null: false
       t.integer    :place_id,     null: false
       t.string     :target,       null: false

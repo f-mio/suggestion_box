@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_29_125800) do
+ActiveRecord::Schema.define(version: 2021_04_08_230510) do
+
+  create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "suggestion_id", null: false
+    t.integer "evaluation_score", null: false
+    t.text "comment", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["suggestion_id"], name: "index_evaluations_on_suggestion_id"
+  end
+
+  create_table "parent_departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "evaluation_id", null: false
+    t.string "result", null: false
+    t.text "comment", null: false
+    t.integer "user_id", null: false
+    t.integer "parent_department_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["evaluation_id"], name: "index_parent_departments_on_evaluation_id"
+  end
 
   create_table "suggestions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false

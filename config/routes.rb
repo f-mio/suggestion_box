@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: "suggestions#index"
+
+  resources :suggestions, only: [:index, :new, :create, :edit, :show]# do
+    # dummy
+    resources :evaluations, only: [:new]
+#  end
+
 end

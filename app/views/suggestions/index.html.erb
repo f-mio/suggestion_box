@@ -1,0 +1,95 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="suggestions-field">
+    <div class="suggestion">
+      <div class="suggestion-top">
+        <div class="suggestion-title-and-point">
+          <p class="title"><b>テストタイトル</b></p>
+          <p class="evaluated-point">80点　</p>
+        </div>
+        <div class="suggestion-category-index">
+          category　：　危険作業の廃止
+        </div>
+      </div>
+      <div class="suggestion-middle">
+        <img class="before-image" src="http://13.113.75.99/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f27ff4d3da87637b45a1f33063c5f7fccf92babd/U-Net_RGB_Loss_200epoch_20200927.png" alt="改善前">
+        <img class="after-image" src="http://13.113.75.99/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f27ff4d3da87637b45a1f33063c5f7fccf92babd/U-Net_RGB_Loss_200epoch_20200927.png">
+      </div>
+      <div class="suggestion-bottom">
+        <b>総務部企画課　Aさん</b>
+      </div>
+    </div>
+
+    <div class="suggestion">
+      <div class="suggestion-top">
+        <div class="suggestion-title-and-point">
+          <p class="title"><b>テストタイトル</b></p>
+          <p class="evaluated-point">80点　</p>
+        </div>
+        <div class="suggestion-category-index">
+          危険作業の廃止
+        </div>
+      </div>
+      <div class="suggestion-middle">
+        <div class="before-image"></div>
+        <div class="after-image"></div>
+      </div>
+      <div class="suggestion-bottom">
+        <b>製造部Z課　Bさん</b>
+      </div>
+    </div>
+
+    <div class="suggestion">
+      <div class="suggestion-top">
+        <div class="suggestion-title-and-point">
+          <p class="title"><b>テストタイトル</b></p>
+          <p class="evaluated-point">80点　</p>
+        </div>
+        <div class="suggestion-category-index">
+          危険作業の廃止
+        </div>
+      </div>
+      <div class="suggestion-middle">
+        <div class="after-image"></div>
+        <div class="before-image"></div>
+      </div>
+      <div class="suggestion-bottom">
+        <b>製造部Z課　Cさん</b>
+      </div>
+    </div>
+    
+    <div class="suggestion">
+      <div class="suggestion-top">
+        <div class="suggestion-title-and-point">
+          <p class="title"><b>テストタイトル</b></p>
+          <p class="evaluated-point">80点　</p>
+        </div>
+        <div class="suggestion-category-index">
+          category　：　新規治具の提案
+        </div>
+      </div>
+      <div class="suggestion-middle">
+        <img class="before-image" src="http://13.113.75.99/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f27ff4d3da87637b45a1f33063c5f7fccf92babd/U-Net_RGB_Loss_200epoch_20200927.png" alt="改善前">
+        <img class="after-image" src="http://13.113.75.99/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f27ff4d3da87637b45a1f33063c5f7fccf92babd/U-Net_RGB_Loss_200epoch_20200927.png">
+      </div>
+      <div class="suggestion-bottom">
+        <b>開発センター　Dさん</b>
+      </div>
+    </div>
+
+    <%# if @suggestions.length % 3 == 1 %>
+      <div class="dummy-suggestion"></div>
+      <div class="dummy-suggestion"></div>
+    <%# elsif @suggestions.length % 3 == 2 %>
+      <!-- div class="dummy-suggestion" ></div-->
+    <%# end %>
+  </div>
+</div>
+
+<%= link_to(new_suggestion_path, class: 'suggestion-btn') do %>
+  <span class='suggestion-btn-text'>提案する</span>
+  <%= image_tag 'comment.png', size: '60x90', class: "suggestion-btn-icon" %>
+<% end %>
+
+<%= render "shared/footer" %>

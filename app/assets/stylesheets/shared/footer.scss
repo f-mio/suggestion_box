@@ -1,0 +1,48 @@
+/* footer css */
+
+.footer{
+  width: 100vw;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+  justify-content: center;
+  align-items: flex-end;
+  background-image: image-url("suggestionbox_footer_image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.registration-background-mask{
+  width: 100%;
+  height: 100%;
+  background: RGB(255,255,255,0.35);
+}
+
+.footer-top{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-left{
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-right{
+  width: 50vw;
+  text-align: center;
+}
+
+.footer-bottom{
+  margin: 20px 0;
+  align-self: center;
+  padding-bottom: 1px;
+}

@@ -1,0 +1,102 @@
+/* This css is used by new and edit action. */
+
+
+.new-suggestion{
+  display: flex;
+  flex-direction: column;
+  background-image: image-url("new_background_image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-weight: 500;
+}
+
+.background-mask{
+  background: RGB(255,255,255,0.35);
+}
+
+.new-suggestion-top{
+  display: flex;
+  padding-top: 10px;
+}
+
+.new-suggestion-top-left{
+  width: 70%;
+  height: 250px;
+  padding: 10px 20px;
+}
+
+.suggestion-input-form{
+  width: 350px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.suggestion-input-target{
+  width: 30%;
+  height: 2500px;
+}
+
+.new-suggestion-top-right{
+  width: 30%;
+  height: 250px;
+  padding: 15px 10px;
+}
+
+.suggestion-map{
+  width: 150px;
+}
+
+.new-suggestion-explanation-area{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 20px; 
+}
+
+.new-suggestion-explanation{
+  width: 45%;
+}
+
+.suggestion-explanation-box{
+  margin-top: 10px;
+  width: 95%;
+}
+
+.new-suggestion-image-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.image-file{
+  margin-left: 30px;
+}
+
+.new-suggestion-effect{
+  margin: 20px 30px;
+}
+
+.suggestion-submit{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.submit-btn{
+  width: 170px;
+  height: 40px;
+  font-size: 25px;
+  background-color: skyblue;
+  border: solid 2px slategrey;
+  border-radius: 10px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  align-self: center;
+}
+
+.submit-btn:hover{
+  opacity: 0.7;
+  color: antiquewhite;
+  background-color: blue;
+}

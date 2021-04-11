@@ -26,6 +26,25 @@
   text-decoration: none;
 }
 
+.sign-in-out-field{
+  font-size: 18px;
+  color:  aliceblue;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 6px;
+  align-items: center;
+}
+
+.sign-in-out-btn{
+  border: solid 1px black;
+  border-radius: 18px;
+  background-color: whitesmoke;
+  opacity: 60%;
+  padding: 5px;
+}
+
 .right-header{
   width: 60%;
   display: flex;

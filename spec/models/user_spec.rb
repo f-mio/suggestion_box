@@ -116,7 +116,7 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Corporate no abcdと数字7桁で入力してください")
       end
       it '5〜8桁目が、197より小さいと場合、登録できない' do
-        @user.corporate_no = "abcd1690001"
+        @user.corporate_no = "abcd1960001"
         @user.valid?
         expect(@user.errors.full_messages).to include("Corporate no abcdと数字7桁で入力してください")
       end

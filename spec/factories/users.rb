@@ -8,7 +8,7 @@ FactoryBot.define do
     gimei = Gimei.name
     first_name   {gimei.first.kanji}
     family_name  {gimei.last.kanji}
-    corporate_no {"abcd" + "2000001"}
+    corporate_no { "abcd" + (Faker::Number.within(range: 1970..2039)).to_s + "001"}
 
   end
 end

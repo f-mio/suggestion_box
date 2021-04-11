@@ -11,10 +11,6 @@
   margin-bottom: 30px;
 }
 
-.header-user-name{}
-
-.sign-in-out-btn{}
-
 .left-header{
   width: 40%;
   display: flex;
@@ -28,6 +24,25 @@
   text-align: center;
   margin-top: 15px;
   text-decoration: none;
+}
+
+.sign-in-out-field{
+  font-size: 18px;
+  color:  aliceblue;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 6px;
+  align-items: center;
+}
+
+.sign-in-out-btn{
+  border: solid 1px black;
+  border-radius: 18px;
+  background-color: whitesmoke;
+  opacity: 60%;
+  padding: 5px;
 }
 
 .right-header{

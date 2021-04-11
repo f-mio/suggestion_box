@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
     # 1970年から2039年入社までに対応 (20年後までにはメンテナンスが発生する)
     CORP_CODE_REGEX = /abcd(19[7-9]|2[0-3]\d)\d{4}/.freeze
-    with_options length: {is: 11, message: "11文字で入力してください"}, format: {with: CORP_CODE_REGEX, message: "ABCDと数字7桁で入力してください"}, uniqueness: true do
+    with_options length: {is: 11, message: "11文字で入力してください"}, format: {with: CORP_CODE_REGEX, message: "abcdと数字7桁で入力してください"}, uniqueness: true do
       validates :corporate_no
     end
 

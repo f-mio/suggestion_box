@@ -2,11 +2,13 @@
   <div class="left-header">
     <%= link_to "Suggestions Box", root_path, class:"header-title"%>
     <% if user_signed_in? %>
-      <div class="header-user-name">
-        ようこそ、<%= @user.family_name %>　<%= @user.first_name %>さん
-      </div>
-      <div class="sign-in-out-btn">
-        <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+      <div class="sign-in-out-field">
+        <p>
+          　　ようこそ、<%= (@user.family_name + " " + @user.first_name) %>さん
+        </p>
+        <p class="sign-in-out-btn">
+          <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+        </p>
       </div>
     <%else%>
       <div class="sign-in-out-btn">

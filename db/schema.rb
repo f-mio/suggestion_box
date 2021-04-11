@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_080616) do
+ActiveRecord::Schema.define(version: 2021_04_11_025858) do
 
   create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "user_id", null: false
-    t.bigint "parent_department_id", null: false
+    t.integer "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["parent_department_id"], name: "index_departments_on_parent_department_id"
   end
 
   create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -26,18 +24,9 @@ ActiveRecord::Schema.define(version: 2021_04_10_080616) do
     t.integer "evaluation_score", null: false
     t.text "comment", null: false
     t.integer "user_id", null: false
-    t.bigint "parent_department_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["parent_department_id"], name: "index_evaluations_on_parent_department_id"
     t.index ["suggestion_id"], name: "index_evaluations_on_suggestion_id"
-  end
-
-  create_table "parent_departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -45,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_080616) do
     t.integer "result_list_id", null: false
     t.text "comment", null: false
     t.integer "user_id", null: false
-    t.integer "parent_department_id", null: false
+    t.integer "department_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["evaluation_id"], name: "index_results_on_evaluation_id"
@@ -68,6 +57,17 @@ ActiveRecord::Schema.define(version: 2021_04_10_080616) do
     t.index ["user_id"], name: "index_suggestions_on_user_id"
   end
 
+  create_table "user_departments_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "department_id", null: false
+    t.boolean "is_manager", null: false
+    t.boolean "is_root_user", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_user_departments_relations_on_department_id"
+    t.index ["user_id"], name: "index_user_departments_relations_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,10 +83,10 @@ ActiveRecord::Schema.define(version: 2021_04_10_080616) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "departments", "parent_departments"
-  add_foreign_key "evaluations", "parent_departments"
   add_foreign_key "evaluations", "suggestions"
   add_foreign_key "results", "evaluations"
   add_foreign_key "suggestions", "departments"
   add_foreign_key "suggestions", "users"
+  add_foreign_key "user_departments_relations", "departments"
+  add_foreign_key "user_departments_relations", "users"
 end

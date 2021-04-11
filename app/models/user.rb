@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
     # パスワードは英数含めた8文字以上のみ可能　(セキュリティは少し緩め。社内使用のみのため、大文字小文字は特に気にしない)
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-    with_options length: {minimum: 8}, format: {with: PASSWORD_REGEX, message: "全角文字で入力してください"} do
+    with_options length: {minimum: 8}, format: {with: PASSWORD_REGEX, message: "半角アルファベットと半角数字の2種類を使用して、8文字以上で入力してください。"} do
       validates :password
     end
 

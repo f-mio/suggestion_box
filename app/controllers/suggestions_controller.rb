@@ -1,6 +1,7 @@
 class SuggestionsController < ApplicationController
+  before_action :set_user, only: [:index, :new, :show, :edit]
+
   def index
-    @user = User.find(current_user.id)
   end
 
   def new
@@ -14,5 +15,12 @@ class SuggestionsController < ApplicationController
   end
 
   def edit
+  end
+
+
+  private
+
+  def set_user
+    @user = User.find(current_user.id)
   end
 end

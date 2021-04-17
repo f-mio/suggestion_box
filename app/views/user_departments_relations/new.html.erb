@@ -1,0 +1,23 @@
+<%= render "header" %>
+
+<%= form_with local: true, url: user_departments_relations_path, model: @relation do |f| %>
+  <div class="new-relation">
+    <div class="new-relation-field">
+      <div class="new-relation-column">社員</div>
+      <%= f.collection_select(:user_id, User.all, :id, :corporate_no, {}, {id:"users-select", class:"new-relation-select-box"}) %>
+    </div>
+    <div class="new-relation-field">
+      <div class="new-relation-column">部署</div>
+      <%= f.collection_select(:department_id, Department.all, :id, :name, {}, {id:"departments-select", class:"new-relation-select-box"}) %>
+    </div>
+    <div class="new-relation-field">
+      <div class="new-relation-column">
+        管理職権限付与　
+        <%= f.check_box :is_manager, {class:"new-relation-checkbox"}, checked_value: true, unchecked_value: false %>
+      </div>
+    </div>
+    <div class="submit">
+      <%= f.submit "作成", class:"submit-btn"%>
+    </div>
+  </div>
+<% end %>

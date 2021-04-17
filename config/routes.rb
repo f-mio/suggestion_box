@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 #      resources :results, only: [:new, :create]
   end
 
-  resources :departments, only: [:index, :new, :update, :create, :destroy]
+  resources :user_departments_relations, only: [:index, :new, :update, :create, :destroy]
 end

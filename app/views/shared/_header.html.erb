@@ -9,13 +9,8 @@
         <div class="more">
           <span class="menu">メニュー</span>
           <ul class="more_list">
-            <li>
-              <%= link_to 'ユーザ編集', edit_user_registration_path, method: :get %>
-            </li>
-            <li>
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-            </li>
-            <li><%= @users.count %></li>
+            <li><%= link_to 'ユーザ登録編集', edit_user_registration_path, method: :get %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
       </div>

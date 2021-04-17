@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 #      resources :results, only: [:new, :create]
   end
 
+  resources :departments, only: [:index, :new, :edit]
 end

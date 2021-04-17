@@ -15,6 +15,14 @@ class SuggestionsController < ApplicationController
   end
 
   def edit
+#    unless @suggestion.writable
+#      redirect_to root_path
+#    end
+#    if Suggestion.update(@suggestion)
+#      redirct_to suggestion_path(@suggestion.id)
+#    else
+#      render :edit
+#    end
   end
 
 
@@ -23,4 +31,8 @@ class SuggestionsController < ApplicationController
   def set_user
     @user = User.find(current_user.id)
   end
+
+#  投稿機能実装時に入れ込む
+#  def suggestion_param
+#  end
 end

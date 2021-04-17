@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_11_025858) do
+ActiveRecord::Schema.define(version: 2021_04_17_081949) do
 
   create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 2021_04_11_025858) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["suggestion_id"], name: "index_evaluations_on_suggestion_id"
+  end
+
+  create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "location_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_places_on_location_id"
   end
 
   create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,7 +75,6 @@ ActiveRecord::Schema.define(version: 2021_04_11_025858) do
     t.bigint "user_id", null: false
     t.bigint "department_id", null: false
     t.boolean "is_manager", null: false
-    t.boolean "is_root_user", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["department_id"], name: "index_user_departments_relations_on_department_id"
@@ -84,6 +97,7 @@ ActiveRecord::Schema.define(version: 2021_04_11_025858) do
   end
 
   add_foreign_key "evaluations", "suggestions"
+  add_foreign_key "places", "locations"
   add_foreign_key "results", "evaluations"
   add_foreign_key "suggestions", "departments"
   add_foreign_key "suggestions", "users"

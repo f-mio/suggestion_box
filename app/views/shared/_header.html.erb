@@ -9,6 +9,9 @@
         <div class="more">
           <span class="menu">メニュー</span>
           <ul class="more_list">
+            <%if current_user.id == 1 %>
+              <li><%= link_to '部署情報編集ページ', departments_path, method: :get %></li>
+            <%end%>
             <li><%= link_to 'ユーザ登録編集', edit_user_registration_path, method: :get %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           </ul>

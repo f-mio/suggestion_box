@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_04_17_081949) do
     t.text "effect", null: false
     t.bigint "user_id", null: false
     t.bigint "department_id", null: false
+    t.boolean "writable", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["department_id"], name: "index_suggestions_on_department_id"

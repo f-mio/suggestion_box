@@ -1,2 +1,26 @@
 
 <%= render "header" %>
+
+<div class="maintenance-relations">
+  <div class="maintenance-index-relation">
+    <div class="maintenance-relation-change">
+      <span class="change-column">変更</span>
+    </div>
+    <div class="maintenance-relation-id">
+      <span class="id-column">ID</span>
+    </div>
+    <div class="maintenance-relation-corporate-no">
+      <span class="corporate-no-column">社員番号</span>
+    </div>
+    <div class="maintenance-relation-user">
+      <span class="user-column">ユーザ名</span>
+    </div>
+    <div class="maintenance-relation-department">
+      <span class="department-column">所属部署</span>
+    </div>
+    <div class="maintenance-relation-manager-check">
+      <span class="is-manager-column">管理職</span>
+    </div>
+  </div>
+  <%= render partial: "user_departments_relations/relation", collection: @relations %>
+</div>

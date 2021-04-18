@@ -1,5 +1,5 @@
 
-// indexページでのCSS
+// header部分
 div.maintenance-header{
   width: 100vw;
   height: 75px;
@@ -26,6 +26,85 @@ div.maintenance-header div ul.maintenance-links li{
   padding: 5px 35px;
   text-decoration: none;
   text-align: center;
+}
+
+
+// index部分
+div.maintenance-relations{
+  margin-left: 15vw;
+  width: 70vw;
+  background-color: azure;
+  padding: 20px 0;
+}
+
+div.maintenance-relations div.maintenance-index-relation{
+  display: flex;
+  flex-direction: row;
+  padding: 5px 1vw 0 1vw;
+}
+
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-change{
+  width: 10%;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-change .change-column{
+  color: red;
+  font-weight: 700;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-change .is-change{
+  transform: scale(1.5);
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-id{
+  width: 10%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-id .id-column{
+  color: blue;
+  font-weight: 500;
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-corporate-no{
+  width: 20%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-corporate-no .corporate-no-column{
+  color: blue;
+  font-weight: 500;
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-user{
+  width: 20%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-user .user-column{
+  color: blue;
+  font-weight: 500;
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-department{
+  width: 40%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-department .department-column{
+  color: blue;
+  font-weight: 500;
+}
+
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-manager-check{
+  width: 10%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-manager-check .is-manager-column{
+  color: blue;
+  font-weight: 500;
 }
 
 

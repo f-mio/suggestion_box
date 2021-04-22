@@ -2,7 +2,7 @@
 
 <div class="new-suggestion">
   <div class="background-mask">
-    <%= form_with model: @suggestion do |f| %>
+    <%= form_with local: true, url:suggestions_path, model: @suggestion do |f| %>
       <div class="new-suggestion-top">
         <div class="new-suggestion-top-left">
           <p class="input-label">
@@ -14,7 +14,7 @@
             カテゴリー
             <span class="indispensable">必須</span>
           </p>
-          <%= f.collection_select :category, Category.all, :id, :name, {},{class:"suggestion-input-form", id:"suggestion-category"} %>
+          <%= f.collection_select :category_id, Category.all, :id, :name, {},{class:"suggestion-input-form", id:"suggestion-category"} %>
           <p class="input-label">
             ターゲット
             <span class="indispensable">必須</span>

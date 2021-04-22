@@ -3,10 +3,9 @@ class Suggestion < ApplicationRecord
   has_many_attached :before_images
   has_many_attached :after_images
 
-  #validate
-  # with_options presense: true do
-  # end
-  #validates
+  with_options presense: true do
+    validates :title, 
+  end
 
   def was_attached?
   end

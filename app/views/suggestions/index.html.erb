@@ -14,14 +14,14 @@
           </div>
         </div>
         <div class="suggestion-middle">
-          <% suggestion.before_images.each do |before_image| %>
-            <%= image_tag before_image, class="before-image" >
-            <% break %>
-          <% end %>
-          <% suggestion.after_images.each do |after_image| %>
-            <%= image_tag after_image, class="after-image" >
-            <% break %>
-          <% end %>
+          <%# suggestion.before_images.each do |before_image| %>
+            <%#= image_tag before_image, class="before-image" >
+            <%# break %>
+          <%# end %>
+          <%# suggestion.after_images.each do |after_image| %>
+            <%#= image_tag after_image, class="after-image" >
+            <%# break %>
+          <%# end %>
         </div>
         <div class="suggestion-bottom">
           <b>総務部企画課　Aさん</b>
@@ -107,6 +107,7 @@
     </div>
 
     <%# if @suggestions.length % 3 == 1 %>
+      <div class="dummy-suggestion"></div>
       <div class="dummy-suggestion"></div>
     <%# elsif @suggestions.length % 3 == 2 %>
       <!-- div class="dummy-suggestion" ></div-->

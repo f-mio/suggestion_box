@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :authentication_keys => [:corporate_no]
 
   # 一人のユーザは複数部署の兼任をせず、一つの代表部署に所属していると仮定する
-  has_one  :department, through: :user_departments_relations
+  has_many :department, through: :user_departments_relations
   has_many :suggestions
 
   ### ### ###

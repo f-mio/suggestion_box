@@ -9,6 +9,14 @@ class SuggestionsController < ApplicationController
   end
 
   def create
+    binding.pry
+    @suggestion = Suggestion.new(suggestion_params)
+    if @suggestion.valid?
+      @suggestion.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -33,13 +41,15 @@ class SuggestionsController < ApplicationController
   end
 
   #投稿機能実装時に入れ込む
-  def suggestion_param
-    params.require(:suggestion).permit(:title,
+  def suggestion_params
+    sql = "SELECT * FROM user_departments_relations WHERE user_id = #{current_user.id} ORDER BY department_id;"
+    relation = UserDepartmentsRelation.find_by_sql(sql)
+    return params.require(:suggestion).permit(:title,
         :issue, :ideal, :category_id,
         :location_id, :place_id, :target,
         :effect, before_images: [], after_images: []
       ).merge(user_id: current_user.id,
-        department_id: current_user.department.id,
-        writabele: true)
+        department_id: relation[0].department_id,
+        writable: true)
   end
 end

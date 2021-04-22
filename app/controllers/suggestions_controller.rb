@@ -32,7 +32,14 @@ class SuggestionsController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-#  投稿機能実装時に入れ込む
-#  def suggestion_param
-#  end
+  #投稿機能実装時に入れ込む
+  def suggestion_param
+    params.require(:suggestion).permit(:title,
+        :issue, :ideal, :category_id,
+        :location_id, :place_id, :target,
+        :effect, before_images: [], after_images: []
+      ).merge(user_id: current_user.id,
+        department_id: current_user.department.id,
+        writabele: true)
+  end
 end

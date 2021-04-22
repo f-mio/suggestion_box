@@ -7,17 +7,17 @@
         <div class="new-suggestion-top-left">
           <p class="input-label">
             タイトル
-            <span>必須</span>
+            <span class="indispensable">必須</span>
           </p>
           <%= f.text_field :title, class:"suggestion-input-form", id:"suggestion-title", placeholder:"タイトルを入力してください" %>
           <p class="input-label">
             カテゴリー
-            <span>必須</span>
+            <span class="indispensable">必須</span>
           </p>
           <%= f.collection_select :category, Category.all, :id, :name, {},{class:"suggestion-input-form", id:"suggestion-category"} %>
           <p class="input-label">
             ターゲット
-            <span>必須</span>
+            <span class="indispensable">必須</span>
           </p>
           <%= f.collection_select :location_id, Location.all, :id, :name, {}, {class:"suggestion-input-target", id:"suggestion-location"}%>
           <%= f.collection_select :place_id, Place.all, :id, :name, {}, {class:"suggestion-input-target", id:"suggestion-place"} %>
@@ -31,7 +31,7 @@
         <div class="new-suggestion-explanation">
           <p class="input-label">
             ＜現状の問題点＞
-            <span>必須</span>
+            <span class="indispensable">必須</span>
           </p>
           <%= f.text_area :issue, class:"suggestion-explanation-box", id:"suggestion-issue", placeholder:"現状の問題点を記載してください", rows:"6", maxlength:"600" %>
           <%= f.file_field :before_images, class:"image-file", name: "before[images][]", id: "before-image" %>
@@ -40,7 +40,7 @@
         <div class="new-suggestion-explanation">
           <p class="input-label">
             ＜あるべき姿,理想＞
-            <span>必須</span>
+            <span class="indispensable">必須</span>
           </p>
           <%= f.text_area :ideal, class:"suggestion-explanation-box", id:"suggeation-ideal", placeholder:"理想とする状態、もしくは改善後の状態について記載してください", rows:"6", maxlength:"600" %>
           <%= f.file_field :after_images, class:"image-file", name: "after[images][]", id: "after-image" %>
@@ -50,7 +50,7 @@
       <div class="new-suggestion-effect">
         <p class="input-label">
           ＜改善効果＞
-          <span>必須</span>
+          <span class="indispensable">必須</span>
         </p>
         <%= f.text_area :effect, class:"suggestion-explanation-box", id:"suggeation-effect", placeholder:"改善効果をできる限り定量的に記載してください", rows:"5", maxlength:"600" %>
       </div>

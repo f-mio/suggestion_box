@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../suggestions/before_attached_images.js")
+require("../suggestions/after_attached_images.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

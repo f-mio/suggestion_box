@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // ファイル選択ボタンを生成
       const beforeInputHTML = document.createElement('input')
       beforeInputHTML.setAttribute('id', `before-image-${beforeImageElementNum}`)
-      beforeInputHTML.setAttribute('name', 'before[images][]')
+      beforeInputHTML.setAttribute('name', 'suggestion[before_images][]')
       beforeInputHTML.setAttribute('type', 'file')
       beforeInputHTML.setAttribute('class', 'image-file')
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         before_file = e.target.files[0];
         before_blob = window.URL.createObjectURL(before_file);
 
-          createImageHTML(before_blob)
+        createImageHTML(before_blob)
       })
     }
 

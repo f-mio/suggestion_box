@@ -34,7 +34,7 @@
             <span class="indispensable">必須</span>
           </p>
           <%= f.text_area :issue, class:"suggestion-explanation-box", id:"suggestion-issue", placeholder:"現状の問題点を記載してください", rows:"6", maxlength:"600" %>
-          <%= f.file_field :before_images, class:"image-file", name: "before[images][]", id: "before-image" %>
+          <%= f.file_field :before_images, class:"image-file", name: "suggestion[before_images][]", id: "before-image" %>
           <div id="before-image-list"></div>
         </div>
         <div class="new-suggestion-explanation">
@@ -43,7 +43,7 @@
             <span class="indispensable">必須</span>
           </p>
           <%= f.text_area :ideal, class:"suggestion-explanation-box", id:"suggeation-ideal", placeholder:"理想とする状態、もしくは改善後の状態について記載してください", rows:"6", maxlength:"600" %>
-          <%= f.file_field :after_images, class:"image-file", name: "after[images][]", id: "after-image" %>
+          <%= f.file_field :after_images, class:"image-file", name: "suggestion[after_images][]", id: "after-image" %>
           <div id="after-image-list"></div>
         </div>
       </div>

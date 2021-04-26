@@ -1,5 +1,5 @@
 class SuggestionsController < ApplicationController
-  before_action :set_user, only: [:index, :new, :show, :edit]
+  before_action :set_user, only: [:index, :new, :show, :edit, :create]
 
   def index
   end
@@ -9,7 +9,6 @@ class SuggestionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @suggestion = Suggestion.new(suggestion_params)
     if @suggestion.valid?
       @suggestion.save
@@ -50,6 +49,7 @@ class SuggestionsController < ApplicationController
         :effect, before_images: [], after_images: []
       ).merge(user_id: current_user.id,
         department_id: relation[0].department_id,
-        writable: true)
+        writable: true
+      )
   end
 end

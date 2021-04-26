@@ -8,36 +8,36 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="registration-field">
-      社員番号　必須 <br />
+      社員番号　<span class="indispensable">必須</span> <br />
       <%= f.text_field :corporate_no, class:"registration-text-box", autofocus: true, autocomplete: "corporate_no" %>
     </div>
 
     <div class="registration-name">
       <div class="registration-name-field">
-        名字　必須 <br />
+        名字　<span class="indispensable">必須</span> <br />
         <%= f.text_field :family_name, class:"registration-name-box", autofocus: true, autocomplete: "family_name" %>
       </div>
       <div class="registration-name-field">
-        名前　必須 <br />
+        名前　<span class="indispensable">必須</span> <br />
         <%= f.text_field :first_name, class:"registration-name-box", autofocus: true, autocomplete: "first_name" %>
       </div>
     </div>
 
     <div class="registration-field">
-      e-mail address　必須 <br />
+      e-mailアドレス　<span class="indispensable">必須</span> <br />
       <%= f.email_field :email, class:"registration-text-box", autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="registration-field">
-      パスワード　必須
+      パスワード　<span class="indispensable">必須</span>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(最小<%= @minimum_password_length %> 文字)</em>
       <% end %><br />
       <%= f.password_field :password, class:"registration-text-box", autocomplete: "new-password" %>
     </div>
 
     <div class="registration-field">
-      パスワード(確認用)　必須 <br />
+      パスワード(確認用)　<span class="indispensable">必須</span> <br />
       <%= f.password_field :password_confirmation, class:"registration-text-box", autocomplete: "new-password" %>
     </div>
 

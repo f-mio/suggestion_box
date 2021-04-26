@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // ファイル選択ボタンを生成
       const afterInputHTML = document.createElement('input')
       afterInputHTML.setAttribute('id', `after-image-${afterImageElementNum}`)
-      afterInputHTML.setAttribute('name', 'after[images][]')
+      afterInputHTML.setAttribute('name', 'suggestion[after_images][]')
       afterInputHTML.setAttribute('type', 'file')
       afterInputHTML.setAttribute('class', 'image-file')
 

@@ -1,0 +1,142 @@
+
+// header部分
+div.maintenance-header{
+  width: 100vw;
+  height: 75px;
+  background-color: salmon;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.maintenance-title{
+  color: aliceblue;
+  font-size: 28px;
+}
+
+.maintenance-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+div.maintenance-header div ul.maintenance-links li{
+  padding: 5px 35px;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+// index部分
+div.maintenance-relations{
+  margin-left: 15vw;
+  width: 70vw;
+  background-color: azure;
+  padding: 20px 0;
+}
+
+div.maintenance-relations div.maintenance-index-relation{
+  display: flex;
+  flex-direction: row;
+  padding: 5px 1vw 0 1vw;
+}
+
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-change{
+  width: 10%;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-change .change-column{
+  color: red;
+  font-weight: 700;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-change .is-change{
+  transform: scale(1.5);
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-id{
+  width: 10%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-id .id-column{
+  color: blue;
+  font-weight: 500;
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-corporate-no{
+  width: 20%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-corporate-no .corporate-no-column{
+  color: blue;
+  font-weight: 500;
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-user{
+  width: 20%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-user .user-column{
+  color: blue;
+  font-weight: 500;
+}
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-department{
+  width: 40%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-department .department-column{
+  color: blue;
+  font-weight: 500;
+}
+
+
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-manager-check{
+  width: 10%;
+  border: solid 1px black;
+  text-align: center;
+}
+div.maintenance-relations div.maintenance-index-relation div.maintenance-relation-manager-check .is-manager-column{
+  color: blue;
+  font-weight: 500;
+}
+
+
+// new-relationでのCSS
+div.new-relation{
+  width: 40vw;
+  height: calc(100vh -75px);
+  font-size: 30px;
+  margin-left: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.new-relation div.new-relation-field{
+  margin: 10px 0;
+  padding: 5px 0;
+  padding-left: 20px;
+  background-color: palevioletred;
+}
+
+div.new-relation div.new-relation-field .new-relation-select-box{
+  width: 90%;
+  height: auto;
+}
+
+.new-relation-checkbox{
+  padding-left: 30px;
+  transform:scale(3);
+}
+
+div.new-relation div.new-relation-field div.submit{
+  display: flex;
+  justify-content: center;
+}

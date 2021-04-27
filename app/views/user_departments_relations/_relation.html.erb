@@ -1,0 +1,30 @@
+<div class="maintenance-index-relation">
+  <div class="maintenance-relation-change">
+    <input type="checkbox" class="is-change">
+  </div>
+  <div class="maintenance-relation-id">
+    <span class="id">
+      <%= relation.id %>
+    </span>
+  </div>
+  <div class="maintenance-relation-corporate-no">
+    <span class="corporate-no">
+      <%= relation.user.corporate_no %>
+    </span>
+  </div>
+  <div class="maintenance-relation-user">
+    <span class="user">
+      <%= (relation.user.family_name + " " + relation.user.first_name) %>
+    </span>
+  </div>
+  <div class="maintenance-relation-department">
+    <span class="department">
+      <%= relation.department.name %>
+    </span>
+  </div>
+  <div class="maintenance-relation-manager-check">
+    <span class="is-manager">
+      <%= relation.is_manager %>
+    </span>
+  </div>
+</div>

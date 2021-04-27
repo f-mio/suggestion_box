@@ -1,2 +1,0 @@
-class ParentDepartment < ApplicationRecord
-end

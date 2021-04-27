@@ -11,6 +11,7 @@ class CreateSuggestions < ActiveRecord::Migration[6.0]
       t.text       :effect,       null: false
       t.references :user,         null: false, foreign_key: true
       t.references :department,   null: false, foreign_key: true
+      t.boolean    :writable,     null: false
 
       t.timestamps
     end

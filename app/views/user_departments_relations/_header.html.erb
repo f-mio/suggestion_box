@@ -1,0 +1,15 @@
+<div class="maintenance-header">
+  <p class="maintenance-title">
+    社員・部署メンテナンスページ
+  </p>
+  <div>
+    <ul class="maintenance-links">
+      <li><%= link_to "トップ", root_path %></li>
+      <% if current_page?(new_user_departments_relation_path)  %>
+        <li><%= link_to "メンテナンストップ", user_departments_relations_path %></li>
+      <% elsif current_page?(user_departments_relations_path)  %>
+        <li><%= link_to "新規 部署割当", new_user_departments_relation_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

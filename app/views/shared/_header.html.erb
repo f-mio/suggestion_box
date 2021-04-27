@@ -2,13 +2,20 @@
   <div class="left-header">
     <%= link_to "Suggestions Box", root_path, class:"header-title"%>
     <% if user_signed_in? %>
-      <div class="sign-in-out-field">
-        <p>
-          　　ようこそ、<%= (@user.family_name + " " + @user.first_name) %>さん
-        </p>
-        <p class="sign-in-out-btn">
-          <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
-        </p>
+      <div class="user-info-field">
+        <div>
+          ようこそ、<%= (@user.family_name + " " + @user.first_name) %>さん
+        </div>
+        <div class="more">
+          <span class="menu">メニュー</span>
+          <ul class="more_list">
+            <%if current_user.id == 1 %>
+              <li><%= link_to '部署情報編集ページ', user_departments_relations_path, method: :get %></li>
+            <%end%>
+            <li><%= link_to 'ユーザ登録編集', edit_user_registration_path, method: :get %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
       </div>
     <%else%>
       <div class="sign-in-out-btn">

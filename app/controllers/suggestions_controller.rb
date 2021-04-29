@@ -2,6 +2,8 @@ class SuggestionsController < ApplicationController
   before_action :set_user, only: [:index, :new, :show, :edit, :create]
 
   def index
+    sql = "SELECT * FROM suggestions ORDER BY created_at desc"
+    @suggestions = Suggestion.find_by_sql(sql)
   end
 
   def new

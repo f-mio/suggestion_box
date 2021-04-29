@@ -60,20 +60,22 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
 .suggestion-middle{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: no-wrap;
 }
 
 .before-image{
   width: 45%;
 //  height: 200px;
-  margin: 5px;
+  padding: 1px;
+  background-color: red;
 }
 
 .after-image{
   width: 45%;
 //  height: 200px;
-  padding: 5px;
+  padding: 1px;
+  background-color: blue;
 }
 
 .suggestion-bottom{

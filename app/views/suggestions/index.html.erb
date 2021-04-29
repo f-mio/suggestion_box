@@ -6,7 +6,9 @@
       <div class="suggestion">
         <div class="suggestion-top">
           <div class="suggestion-title-and-point">
-            <p class="title"><b><%= suggestion.title %></b></p>
+            <p class="title">
+              <%= link_to suggestion.title, suggestion_path(suggestion.id), class:"suggestion-link" %>
+            </p>
             <p class="evaluated-point">未評価</p>
           </div>
           <div class="suggestion-category-index">

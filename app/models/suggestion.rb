@@ -1,5 +1,6 @@
 class Suggestion < ApplicationRecord
   belongs_to :user
+  belongs_to :department
   has_many_attached :before_images
   has_many_attached :after_images
 

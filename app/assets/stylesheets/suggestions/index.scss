@@ -18,7 +18,6 @@
 
 .suggestion{
   width: calc((100% - 100px) / 3);
-//  height: 300px;
   background-color: #E8F6F7;
   margin: 20px 0;
   border: solid 1px aquamarine;
@@ -45,6 +44,11 @@
   padding: 3px 0px 3px 25px ;
 }
 
+div.main div.suggestions-field div.suggestion-top p.evaluated-point {
+  margin-right: 20px;
+  font-weight: 700;
+}
+
 .point-better{
   color: blue;
 }
@@ -56,20 +60,22 @@
 .suggestion-middle{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: no-wrap;
 }
 
 .before-image{
   width: 45%;
 //  height: 200px;
-  margin: 5px;
+  padding: 1px;
+  background-color: red;
 }
 
 .after-image{
   width: 45%;
 //  height: 200px;
-  padding: 5px;
+  padding: 1px;
+  background-color: blue;
 }
 
 .suggestion-bottom{

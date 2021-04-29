@@ -1,96 +1,190 @@
 
-.show-title{
-  font-size: 40px;
-  text-align: center;
-}
-
-.show-suggestion {
+div.show-suggestion {
   display: flex;
   flex-direction: column;
-//  background-image: image-url("xxxx");
-//  background-position: center;
-//  background-size: cover;
-//  background-repeat: no-repeat;
+  background-image: image-url("new_background_image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// background-maskはindexで定義しているものを流用する
+
+
+// _suggestion.html.erbでのcss
+div.show-title-and-suggestion-info{
+  display: flex;
+}
+
+div.show-title-and-suggestion-info div.show-title{
+  width: 70vw;
+  font-size: 40px;
+  text-align: center;
+  color: red;
+}
+
+div.show-title-and-suggestion-info div.show-suggestion-info{
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-right: 5vw;
+}
+
+div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents{
+  display: flex;
+  flex-direction: row;
   font-weight: 500;
 }
 
-.background-mask{
-  background: RGB(255, 255, 255, 0.35);
+div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents p.show-suggestion-info-title{
+  width: 30%;
+  text-align: center;
+  border: solid 1px black;
+  padding: 3px 0;
+  background-color: rgba($color: whitesmoke, $alpha: 0.7);
 }
 
-.show-suggestion-top{
-  display: flex;
-  padding-top: 10px;
-}
-
-.show-suggestion-top-left{
+div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents p.show-suggestion-info-content{
   width: 70%;
-  height: 250px;
-  padding: 10px 20px;
-}
-
-.show-suggestion-top-right{
-  width: 30px;
-  height: 250px;
-}
-
-.show-text-box{
-  width: 350px;
-  height: 30px;
-  margin: 10px 30px;
-  padding-left: 1px;
+  text-align: start;
   border: solid 1px black;
+  padding: 3px 0 3px 30px;
+  background-color: rgba($color: whitesmoke, $alpha: 0.7);
 }
 
-// newのsuggestion-mapを使う
-
-.show-target-field{
-  margin: 10px 30px;
+div.show-target-info-and-map{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  margin-top: 30px;
 }
 
-.show-target-form{
-  width: 350px;
-  height: 30px;
-  padding-left: 1px;
-  border: solid 1px black;
+div.show-target-info-and-map div.show-target-map{
+  width: 50%;
+  background-color: yellowgreen;
+  margin-left: 10%;
+  margin-right: 3%;
+  // 仮↓
+  height: 300px;
 }
 
-.show-suggestion-explanation-area{
+div.show-target-info-and-map div.show-target-info{
+  width: 25%;
   display: flex;
-  justify-content: space-evenly;
-  margin: 0 20px;
-}
-
-.show-suggestion-explanation{
-  width: 45%;
-}
-
-.show-suggestion-explanation-box{
-  width: 95%;
-  height: 150px;
-}
-
-.show-suggestion-image-area{
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: nowrap;
+  margin-left: 2%;
+  margin-right: 10%;
 }
 
-.image-file{
-  margin-left: 30px;
-}
-
-
-.show-suggestion-explanation-box{
-  margin-top: 10px;
-  width: 95%;
+// 改善箇所の場所を示す部分
+div.show-target-info-and-map div.show-target-info ul li{
   border: solid 1px black;
+  padding: 2px 0 2px 10px;
 }
 
-.show-suggestion-effect{
-  margin-left: 20px 30px;
+div.show-target-contents{
+  display: flex;
+  flex-direction: row;
+}
+
+p.show-target-title{
+  width: 30%;
+  border: solid 1px white;
+  padding: 2px;
+  text-align: center;
+  background-color: rgba($color: whitesmoke, $alpha: 0.7);
+}
+
+p.show-target-content{
+  width: 70%;
+  border: solid 1px white;
+  padding: 2px 0 2px 20px;
+  text-align: start;
+  background-color: rgba($color: whitesmoke, $alpha: 0.7);
+}
+
+
+// 問題点とあるべき姿が記載される部分
+
+div.show-issue-and-ideal{
+  display: flex;
+  flex-direction: row;
+}
+
+div.show-issue-and-ideal div.show-issue{
+  width: 40vw;
+  margin: 20px 3vw 0 7vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba( red, 0.4);
+  align-items: center;
+}
+
+div.show-issue-and-ideal div.show-ideal{
+  width: 40vw;
+  margin: 20px 7vw 0 3vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba( blue, 0.4);
+  align-items: center;
+}
+
+
+div.show-issue-and-ideal div.show-issue div.show-issue-comment{
+  width: 90%;
+  height: 150px;
+  border: solid 1px white;
+  padding: 5px 10px;
+  margin-top: 5px;
+  text-align: start;
+  background-color: rgba(whitesmoke, 0.7);
+}
+
+div.show-issue-and-ideal div.show-ideal div.show-ideal-comment{
+  width: 90%;
+  height: 150px;
+  border: solid 1px white;
+  padding: 5px 10px;
+  margin-top: 5px;
+  text-align: start;
+  background-color: rgba(whitesmoke, 0.7);
+}
+
+.show-issue-and-ideal-image{
+  width: 40%;
+  margin: 5px 0 5px 6%;
+}
+
+.show-issue-and-ideal-title{
+  color: antiquewhite;
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+div.show-effect{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+div.show-effect div.show-effect-field{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(aqua, 0.5);
+}
+
+div.show-effect p.show-effect-title{
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+div.show-effect p.show-effect-comment{
+  margin: 3px 2% 10px 2%;
+  width: 96%;
+  height: 120px;
+  border: solid 1px white;
+  background-color: rgba(whitesmoke, 0.7);
 }

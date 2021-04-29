@@ -9,7 +9,9 @@
             <p class="title">
               <%= link_to suggestion.title, suggestion_path(suggestion.id), class:"suggestion-link" %>
             </p>
-            <p class="evaluated-point">未評価</p>
+            <p class="evaluated-point">
+              <span class="not-evaluated">未評価</span>
+            </p>
           </div>
           <div class="suggestion-category-index">
             category　：　<%= Category.find(suggestion.category_id).name %>

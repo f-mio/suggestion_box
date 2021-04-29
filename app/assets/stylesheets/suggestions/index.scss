@@ -58,12 +58,17 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
   font-weight: 700;
 }
 
-.point-better{
+div.main div.suggestions-field div.suggestion-top p.evaluated-point span.point-better{
   color: blue;
 }
 
-.point-great{
+div.main div.suggestions-field div.suggestion-top p.evaluated-point span.point-great{
   color: red;
+}
+
+div.main div.suggestions-field div.suggestion-top p.evaluated-point span.not-evaluated{
+  font-weight: 100;
+  color: skyblue;
 }
 
 .suggestion-middle{

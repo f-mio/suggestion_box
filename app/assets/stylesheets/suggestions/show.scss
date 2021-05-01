@@ -19,8 +19,9 @@ div.show-title-and-suggestion-info{
 div.show-title-and-suggestion-info div.show-title{
   width: 70vw;
   font-size: 40px;
+  font-weight: 700;
+  color: blue;
   text-align: center;
-  color: red;
 }
 
 div.show-title-and-suggestion-info div.show-suggestion-info{
@@ -228,15 +229,30 @@ div.show-prev-next-link p.show-page-next-disable{
 div.show-suggestion div.background-mask div.link{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: 30px;
 }
 
-.link-btn-show-to-edit{
+div.show-suggestion div.background-mask div.link a.link-btn-show-to-edit{
+  width: 180px;
+  height: 30px;
   text-decoration: none;
-  color: beige;
-  background-color: brown;
+  color: gray;
+  background-color: skyblue;
   border: solid 0.5px cornsilk ;
   font-size: 20px;
   padding: 5px 10px;
+  text-align: center;
+}
+
+div.show-suggestion div.background-mask div.link a.destroy-btn{
+  width: 180px;
+  height: 30px;
+  text-decoration: none;
+  color: beige;
+  background-color: rgba( red, 0.7);
+  border: solid 1px cornsilk ;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
 }

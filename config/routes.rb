@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "suggestions#index"
 
-  resources :suggestions, only: [:index, :new, :create, :edit, :update, :show] do
+  resources :suggestions do
 #    resources :evaluations, only: [:new, :create]
 #      resources :results, only: [:new, :create]
   end

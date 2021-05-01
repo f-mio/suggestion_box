@@ -1,5 +1,4 @@
 <%= render "shared/header"%>
-
 <div class="new-suggestion">
   <div class="background-mask">
     <%= form_with local: true, url:suggestions_path, model: @suggestion do |f| %>
@@ -60,5 +59,4 @@
     <% end %>
   </div>
 </div>
-
 <%= render "shared/footer"%>

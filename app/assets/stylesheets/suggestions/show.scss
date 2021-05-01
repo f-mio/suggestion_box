@@ -56,14 +56,14 @@ div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-
 div.show-target-info-and-map{
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  justify-content: space-around;
+  margin: 30px 7vw 0 7vw;
+  background-color: rgba(yellowgreen, 0.4);
 }
 
 div.show-target-info-and-map div.show-target-map{
   width: 50%;
-  background-color: yellowgreen;
-  margin-left: 10%;
-  margin-right: 3%;
+  margin: 10px 3% 0 3%;
   // 仮↓
   height: 300px;
 }
@@ -164,6 +164,7 @@ div.show-issue-and-ideal div.show-ideal div.show-ideal-comment{
 
 div.show-effect{
   margin-top: 20px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
@@ -187,4 +188,36 @@ div.show-effect p.show-effect-comment{
   height: 120px;
   border: solid 1px white;
   background-color: rgba(whitesmoke, 0.7);
+}
+
+
+// 次と前の提案の切り替え部分
+
+div.show-prev-next-link{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+div.show-prev-next-link a.show-page-prev{
+  text-decoration: none;
+  color: blue;
+  margin: 5px 10%;
+}
+
+div.show-prev-next-link a.show-page-next{
+  text-decoration: none;
+  color: blue;
+  margin: 5px 10%;
+}
+
+div.show-prev-next-link p.show-page-prev-disable{
+  text-decoration: none;
+  margin: 5px 10%;
+}
+
+div.show-prev-next-link p.show-page-next-disable{
+  text-decoration: none;
+  margin: 5px 10%;
 }

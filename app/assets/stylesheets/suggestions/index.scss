@@ -37,11 +37,20 @@
 .suggestion-title-and-point{
   display: flex;
   justify-content: space-between;
-  padding: 5px 10px;
+  align-items: flex-end;
+  padding: 2px 0;
+}
+
+div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point a.suggestion-link{
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  margin-left: 20px;
+  font-weight: 700;
 }
 
 .suggestion-category-index{
-  padding: 3px 0px 3px 25px ;
+  padding: 0px 0px 3px 25px ;
 }
 
 div.main div.suggestions-field div.suggestion-top p.evaluated-point {
@@ -49,12 +58,17 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
   font-weight: 700;
 }
 
-.point-better{
+div.main div.suggestions-field div.suggestion-top p.evaluated-point span.point-better{
   color: blue;
 }
 
-.point-great{
+div.main div.suggestions-field div.suggestion-top p.evaluated-point span.point-great{
   color: red;
+}
+
+div.main div.suggestions-field div.suggestion-top p.evaluated-point span.not-evaluated{
+  font-weight: 100;
+  color: skyblue;
 }
 
 .suggestion-middle{

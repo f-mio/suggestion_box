@@ -1,0 +1,98 @@
+<div class="show-title-and-suggestion-info">
+  <div class="show-title">
+    <%= @suggestion.title %>
+  </div>
+  <div class="show-suggestion-info">
+    <div class="show-suggestion-info-contents">
+      <p class="show-suggestion-info-title">
+        提出日
+      </p>
+      <p class="show-suggestion-info-content">
+        <%= @suggestion.created_at.strftime("%Y年 %m月 %d日") %>
+      </p>
+    </div>
+    <div class="show-suggestion-info-contents">
+      <p class="show-suggestion-info-title">
+        部署名
+      </p>
+      <p class="show-suggestion-info-content">
+        <%= @suggestion.department.name %>
+      </p>
+    </div>
+    <div class="show-suggestion-info-contents">
+      <p class="show-suggestion-info-title">
+        提案者
+      </p>
+      <p class="show-suggestion-info-content">
+        <%= (@suggestion.user.family_name + " " + @suggestion.user.first_name) %>さん
+      </p>
+    </div>
+  </div>
+</div>
+<div class="show-target-info-and-map">
+  <div class="show-target-map">
+    <p class="show-map">
+      地図を入れ込みたい
+    </p>
+  </div>
+  <div class="show-target-info">
+    <div class="show-target-contents">
+      <p class="show-target-title">
+        所 在 地
+      </p>
+      <p class="show-target-content">
+        <%= @suggestion.location.name %>
+      </p>
+    </div>
+    <div class="show-target-contents">
+      <p class="show-target-title">
+        場　　所
+      </p>
+      <p class="show-target-content">
+        <%= @suggestion.place.name %>
+      </p>
+    </div>
+    <div class="show-target-contents">
+      <p class="show-target-title">
+        改善箇所
+      </p>
+      <p class="show-target-content">
+        <%= @suggestion.target %>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="show-issue-and-ideal">
+  <div class="show-issue">
+    <span class="show-issue-and-ideal-title">＜問題点＞</span>
+    <div class="show-issue-comment">
+      <%= @suggestion.issue %>
+    </div>
+    <div class="show-issue-and-ideal-images">
+      <% @suggestion.before_images.each do |image|%>
+        <%= image_tag image, class:"show-issue-and-ideal-image" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="show-ideal">
+    <span class="show-issue-and-ideal-title">＜あるべき姿＞</span>
+    <div class="show-ideal-comment">
+      <%= @suggestion.ideal %>
+    </div>
+    <div class="show-issue-and-ideal-images">
+      <% @suggestion.after_images.each do |image|%>
+        <%= image_tag image, class:"show-issue-and-ideal-image" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="show-effect">
+  <div class="show-effect-field">
+    <p class="show-effect-title">
+      ＜効果＞
+    </p>
+    <p class="show-effect-comment">
+      <%= @suggestion.effect %>
+    </p>
+  </div>
+</div>

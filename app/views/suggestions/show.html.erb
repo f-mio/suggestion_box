@@ -1,13 +1,23 @@
 <%= render "shared/header" %>
 
+<%= render "suggestions/suggestion_prev_next" %>
+
 <div class="show-suggestion">
-
-  <div class="title">
-    <%= @suggestion.name, class:"show-title"%>
+  <div class="background-mask">
+    <%= render "suggestions/suggestion" %>
   </div>
-
-  <%= render "suggetions/suggestion" %>
-
 </div>
+
+<%= render "suggestions/suggestion_prev_next" %>
+
+<div class="show-evaluation-field">
+  <%#= render "evaluations/evaluation" %>
+</div>
+
+<div class="show-result-field">
+  <%#= render "results/result" %>
+</div>
+
+
 
 <%= render "shared/footer" %>

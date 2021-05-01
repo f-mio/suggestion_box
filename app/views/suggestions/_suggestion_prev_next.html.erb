@@ -1,0 +1,12 @@
+<div class="show-prev-next-link">
+  <% unless @suggestion.previous == nil %>
+    <%= link_to "＜ 前の提案", suggestion_path(@suggestion.previous), class:"show-page-prev" %>
+  <% else %>
+    <p class="show-page-prev-disable">＜ 前の提案</p>
+  <% end %>
+  <% unless @suggestion.next == nil %>
+    <%= link_to "次の提案 ＞", suggestion_path(@suggestion.next), class:"show-page-next" %>
+  <% else %>
+    <p class="show-page-next-disable">次の提案 ＞</p>
+  <% end %>
+</div>

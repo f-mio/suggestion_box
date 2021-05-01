@@ -21,6 +21,7 @@ class SuggestionsController < ApplicationController
   end
 
   def show
+    @suggestion = Suggestion.find(params[:id])
   end
 
   def edit

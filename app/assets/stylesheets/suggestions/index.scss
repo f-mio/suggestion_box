@@ -21,6 +21,9 @@
   background-color: #E8F6F7;
   margin: 20px 0;
   border: solid 1px aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .dummy-suggestion{
@@ -44,7 +47,7 @@
 div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point a.suggestion-link{
   text-decoration: none;
   font-size: 25px;
-  color: black;
+  color: blue;
   margin-left: 20px;
   font-weight: 700;
 }
@@ -80,16 +83,14 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point span.not-eva
 
 .before-image{
   width: 45%;
-//  height: 200px;
   padding: 1px;
-  background-color: red;
+  border: 1px solid red;
 }
 
 .after-image{
   width: 45%;
-//  height: 200px;
   padding: 1px;
-  background-color: blue;
+  border: 1px solid blue;
 }
 
 .suggestion-bottom{

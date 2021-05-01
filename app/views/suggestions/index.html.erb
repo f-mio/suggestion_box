@@ -30,7 +30,7 @@
         <div class="suggestion-bottom">
           <b>
             <%= suggestion.department.name %>　
-            <%= suggestion.user.family_name %>さん
+            <%= (suggestion.user.family_name + " " +suggestion.user.first_name) %>さん
           </b>
         </div>
       </div>

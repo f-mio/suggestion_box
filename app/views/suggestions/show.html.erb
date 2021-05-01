@@ -5,9 +5,10 @@
 <div class="show-suggestion">
   <div class="background-mask">
     <%= render "suggestions/suggestion" %>
-    <% if current_user.id == @suggestion.user_id %>
+    <% if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
       <div class="link">
         <%= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
+        <%= link_to "削除", suggestion_path(params[:id]), method: :delete, class:"destroy-btn" %>
       </div>
     <% end %>
   </div>

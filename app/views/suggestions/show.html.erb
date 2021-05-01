@@ -5,6 +5,11 @@
 <div class="show-suggestion">
   <div class="background-mask">
     <%= render "suggestions/suggestion" %>
+    <% if current_user.id == @suggestion.user_id %>
+      <div class="link">
+        <%= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
+      </div>
+    <% end %>
   </div>
 </div>
 

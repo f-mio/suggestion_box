@@ -1,9 +1,11 @@
 <div class="show-prev-next-link">
+  <!-- 前に移動するボタンの定義 -->
   <% unless @suggestion.previous == nil %>
     <%= link_to "＜ 前の提案", suggestion_path(@suggestion.previous), class:"show-page-prev" %>
   <% else %>
     <p class="show-page-prev-disable">＜ 前の提案</p>
   <% end %>
+  <!-- 次に移動するボタンの定義 -->
   <% unless @suggestion.next == nil %>
     <%= link_to "次の提案 ＞", suggestion_path(@suggestion.next), class:"show-page-next" %>
   <% else %>

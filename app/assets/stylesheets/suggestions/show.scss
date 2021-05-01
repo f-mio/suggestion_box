@@ -13,6 +13,7 @@ div.show-suggestion {
 // _suggestion.html.erbでのcss
 div.show-title-and-suggestion-info{
   display: flex;
+  margin-top: 20px;
 }
 
 div.show-title-and-suggestion-info div.show-title{
@@ -184,6 +185,7 @@ div.show-effect p.show-effect-title{
 
 div.show-effect p.show-effect-comment{
   margin: 3px 2% 10px 2%;
+  padding: 5px 10px;
   width: 96%;
   height: 120px;
   border: solid 1px white;
@@ -220,4 +222,21 @@ div.show-prev-next-link p.show-page-prev-disable{
 div.show-prev-next-link p.show-page-next-disable{
   text-decoration: none;
   margin: 5px 10%;
+}
+
+
+div.show-suggestion div.background-mask div.link{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.link-btn-show-to-edit{
+  text-decoration: none;
+  color: beige;
+  background-color: brown;
+  border: solid 0.5px cornsilk ;
+  font-size: 20px;
+  padding: 5px 10px;
 }

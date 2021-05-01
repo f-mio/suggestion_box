@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :location do
-    id = Location.plunk(:id)
+    id = Location.pluck(:id)
     location = Location.find(id)
 
     id    {id}

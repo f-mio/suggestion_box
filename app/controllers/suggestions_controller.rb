@@ -1,5 +1,5 @@
 class SuggestionsController < ApplicationController
-  before_action :set_user, only: [:index, :new, :show, :edit, :create, :destroy]
+#  before_action :set_user, only: [:index, :new, :show, :edit, :create, :destroy]
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
   before_action :validate_suggestion_state, only: [:edit, :update, :destroy]
 
@@ -37,7 +37,6 @@ class SuggestionsController < ApplicationController
     end
   end
 
-
   def destroy
     @suggestion.destroy
     redirect_to root_path
@@ -45,6 +44,7 @@ class SuggestionsController < ApplicationController
 
   private
 
+  # 消す
   def set_user
     @user = User.find(current_user.id)
   end
@@ -63,8 +63,8 @@ class SuggestionsController < ApplicationController
   def suggestion_params
     sql = "SELECT * FROM user_departments_relations WHERE user_id = #{current_user.id} ORDER BY department_id;"
     relation = UserDepartmentsRelation.find_by_sql(sql).first
-    return params.require(:suggestion).permit(:title,
-        :issue, :ideal, :category_id,
+    return params.require(:suggestion).permit(
+        :title, :issue, :ideal, :category_id,
         :location_id, :place_id, :target,
         :effect, before_images: [], after_images: []
       ).merge(user_id: current_user.id,

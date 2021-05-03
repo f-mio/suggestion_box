@@ -18,13 +18,11 @@
           </div>
         </div>
         <div class="suggestion-middle">
-          <% suggestion.before_images.each do |before_image| %>
-            <%= image_tag before_image, class:"before-image" %>
-            <% break %>
+          <% unless suggestion.before_images.first == nil %>
+            <%= image_tag suggestion.before_images.first, class:"before-image" %>
           <% end %>
-          <% suggestion.after_images.each do |after_image| %>
-            <%= image_tag after_image, class:"after-image" %>
-            <% break %>
+          <% unless suggestion.after_images.first == nil %>
+            <%= image_tag suggestion.after_images.first, class:"after-image" %>
           <% end %>
         </div>
         <div class="suggestion-bottom">

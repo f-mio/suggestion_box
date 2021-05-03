@@ -17,11 +17,12 @@ div.show-title-and-suggestion-info{
 }
 
 div.show-title-and-suggestion-info div.show-title{
-  width: 70vw;
-  font-size: 40px;
+  width: 58vw;
+  font-size: 30px;
   font-weight: 700;
   color: blue;
-  text-align: center;
+  text-align: start;
+  margin-left: 7%;
 }
 
 div.show-title-and-suggestion-info div.show-suggestion-info{
@@ -29,7 +30,7 @@ div.show-title-and-suggestion-info div.show-suggestion-info{
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  margin-right: 5vw;
+  margin-right: 10vw;
 }
 
 div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents{

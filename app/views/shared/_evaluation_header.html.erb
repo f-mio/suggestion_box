@@ -1,4 +1,4 @@
-<div class="header">
+<div class="evaluation-header">
   <div class="left-header">
     <%= link_to "Suggestions Box", root_path, class:"header-title"%>
     <% if user_signed_in? %>
@@ -9,10 +9,10 @@
         <div class="more">
           <span class="menu">メニュー</span>
           <ul class="more_list">
+            <li><%= link_to 'メインページ', root_path, method: :get %></li>
             <% if true %>
               <li><%= link_to '評価ページ', evaluations_path, method: :get %></li>
-            <%end%>
-            <% if current_user.id == 1 %>
+            <% elsif current_user.id == 1 %>
               <li><%= link_to '部署情報編集ページ', user_departments_relations_path, method: :get %></li>
             <%end%>
             <li><%= link_to 'ユーザ登録編集', edit_user_registration_path, method: :get %></li>
@@ -31,17 +31,6 @@
       <div class="header-search">
         <div class="search-form"></div>
         <div class="search-btn"></div>
-        <%# 本番は下記の検索フォームを入れ込む %>
-        <%#= form_with "#", root_path , placeholder: "ワード検索" , class:"header-search", local: true do |f| %>
-          <%#= f.text_field :keyword, class:search-form %>
-          <%#= f.submit class:"search-btn" %>
-        <%# end %>
-      </div>
-      <div class="header-items">
-        <p class="header-item">時期</p>
-        <p class="header-item">カテゴリー</p>
-        <p class="header-item">部署</p>
-        <p class="header-item">評価</p>
       </div>
     </div>
   </div>

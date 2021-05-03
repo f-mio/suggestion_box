@@ -44,13 +44,38 @@
   padding: 2px 0;
 }
 
-div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point a.suggestion-link{
-  text-decoration: none;
+div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point p.title{
+  width: 85%;
   font-size: 25px;
   color: blue;
   margin-left: 20px;
   font-weight: 700;
 }
+
+div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point p.title a.suggestion-link{
+  text-decoration: none;
+}
+
+div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point p.evaluated-point{
+  width: 15%;
+  font-size: 20px;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+div.main div.suggestions-field div.suggestion div.suggestion-top p.evaluated-point span.point-better{
+  color: blue;
+}
+
+div.main div.suggestions-field div.suggestion div.suggestion-top p.evaluated-point span.point-great{
+  color: black;
+}
+
+div.main div.suggestions-field div.suggestion div.suggestion-top p.evaluated-point span.not-evaluated{
+  font-weight: 100;
+  color: skyblue;
+}
+
 
 .suggestion-category-index{
   padding: 0px 0px 3px 25px ;
@@ -61,18 +86,7 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
   font-weight: 700;
 }
 
-div.main div.suggestions-field div.suggestion-top p.evaluated-point span.point-better{
-  color: blue;
-}
 
-div.main div.suggestions-field div.suggestion-top p.evaluated-point span.point-great{
-  color: red;
-}
-
-div.main div.suggestions-field div.suggestion-top p.evaluated-point span.not-evaluated{
-  font-weight: 100;
-  color: skyblue;
-}
 
 .suggestion-middle{
   display: flex;

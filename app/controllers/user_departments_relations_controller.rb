@@ -12,7 +12,6 @@ class UserDepartmentsRelationsController < ApplicationController
     sql += "WHERE user_id = #{relation_params[:user_id]} AND department_id = #{relation_params[:department_id]};"
     relation = UserDepartmentsRelation.find_by_sql(sql)
     @relation = UserDepartmentsRelation.new(relation_params)
-    binding.pry
 
     # 既にあるものがあった場合、メンテナンストップへ移動
     if relation.count >= 1

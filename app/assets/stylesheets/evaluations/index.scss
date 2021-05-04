@@ -1,10 +1,3 @@
-
-// header部分
-
-
-
-
-
 div.evaluation-main{
   display: flex;
   flex-direction: row;
@@ -64,7 +57,10 @@ div.evaluation-main div.none-evaluation-items{
   height: 80vh;
   color: aliceblue;
   align-self: center;
-  background-color: skyblue;
+  background-image: image-url("evaluations-index.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:  center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,13 +71,5 @@ div.evaluation-main div.none-evaluation-items p{
   font-size: 40px;
 }
 
-div.evaluation-main div.evaluation-area div.show-suggestion{
-  height: 60vh;
-  overflow: auto;
-}
 
 
-div.evaluation-main div.evaluation-area div.evaluation-form{
-  height: 20vh;
-  background-color: skyblue;
-}

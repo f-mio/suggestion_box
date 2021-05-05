@@ -1,6 +1,7 @@
 class SuggestionsController < ApplicationController
 #  before_action :set_user, only: [:index, :new, :show, :edit, :create, :destroy]
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
+  before_action :set_relations, only: [:index, :edit, :show]
   before_action :validate_suggestion_state, only: [:edit, :update, :destroy]
 
 
@@ -47,6 +48,10 @@ class SuggestionsController < ApplicationController
   # 消す
   def set_user
     @user = User.find(current_user.id)
+  end
+
+  def set_relations
+    @relations = UserDepartmentsRelation.where("user_id = #{current_user.id} AND is_manager = True")
   end
 
   def set_suggestion

@@ -8,4 +8,5 @@ class ApplicationRecord < ActiveRecord::Base
   def next
     next_id = Suggestion.where("id > ?", self.id).order("id ASC").first
   end
+
 end

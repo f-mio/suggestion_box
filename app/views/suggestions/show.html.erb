@@ -5,21 +5,53 @@
 <div class="show-suggestion">
   <div class="background-mask">
     <%= render "suggestions/suggestion" %>
-    <% if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
-      <div class="link">
+    <div class="link">
+      <% if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
         <%= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
         <%= link_to "削除", suggestion_path(params[:id]), method: :delete, class:"destroy-btn" %>
-      </div>
-    <% end %>
+      <% end %>
+      <% if (@suggestion.evaluation == nil && @relations.where("department_id = #{@suggestion.department.id}" ).length > 0) %>
+        <%= link_to "評価ページへ", new_suggestion_evaluation_path(params[:id]), class:"link-btn-show-to-evaluation" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <%= render "suggestions/suggestion_prev_next" %>
 
-<div class="show-evaluation-field">
-  <%#= render "evaluations/evaluation" %>
-</div>
+<%# 評価ページ %>
+<% unless @suggestion.evaluation == nil %>
+  <div class="show-evaluation-field">
+    <h2 class="title">
+      評価結果
+    </h2>
 
+    <div class="show-evaluation-comment-and-score">
+      <p class="show-evaluation-comment-form">
+        <%= @suggestion.evaluation.comment %>
+      </p>
+      <div >
+        <p class="show-evaluation-score-form">
+          <%= @suggestion.evaluation.evaluation_score %>
+        </p>
+        <p>
+          <br>
+          ＜評価者＞ <br>
+          <%= ( @suggestion.evaluation.user.family_name + " " + @suggestion.evaluation.user.first_name ) %>さん
+        </p>
+      </div>
+    </div>
+
+    <div class="link">
+      <%# if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
+        <%#= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
+        <%#= link_to "削除", suggestion_path(params[:id]), method: :delete, class:"destroy-btn" %>
+      <%# end %>
+    </div>
+  </div>
+<% end %>
+
+<%# 最終評価ページ %>
 <div class="show-result-field">
   <%#= render "results/result" %>
 </div>

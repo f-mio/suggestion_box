@@ -14,7 +14,7 @@
 
     <%# 採点部分 %>
     <div class="evaluation-form">
-      <%= form_with local: true, url: suggestion_evaluations_path(params[:suggestion_id]) do |f| %>
+      <%= form_with local: true, model: @evaluation, url: suggestion_evaluations_path(params[:suggestion_id]) do |f| %>
         <p class="evaluation-input-title">評価記入エリア</p>
         <div class="evaluation-input">
           <%= f.text_area :comment, class:"evaluate-comment", placeholder:"コメントを記入して下さい", maxlength:"400" %>

@@ -10,7 +10,19 @@
               <%= link_to suggestion.title, suggestion_path(suggestion.id), class:"suggestion-link" %>
             </p>
             <p class="evaluated-point">
-              <span class="not-evaluated">未評価</span>
+              <% if suggestion.evaluation != nil && suggestion.evaluation.evaluation_score >= 80 %>
+                <span class="point-great">
+                  <%= suggestion.evaluation.evaluation_score %>点
+                </span>
+              <% elsif suggestion.evaluation != nil && suggestion.evaluation.evaluation_score >= 60 %>
+                <span class="point-better">
+                  <%= suggestion.evaluation.evaluation_score %>点
+                </span>
+              <% elsif suggestion.evaluation != nil %>
+                <%= suggestion.evaluation.evaluation_score %>点
+              <% else %>
+                <span class="not-evaluated">未評価</span>
+              <% end %>
             </p>
           </div>
           <div class="suggestion-category-index">

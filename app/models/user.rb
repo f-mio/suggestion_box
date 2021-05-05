@@ -8,6 +8,7 @@ class User < ApplicationRecord
   # 一人のユーザは複数部署の兼任をせず、一つの代表部署に所属していると仮定する
   has_many :department, through: :user_departments_relations
   has_many :suggestions
+  has_many :evaluations
 
   ### ### ###
   # validation

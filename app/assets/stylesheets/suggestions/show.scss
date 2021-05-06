@@ -2,10 +2,10 @@
 div.show-suggestion {
   display: flex;
   flex-direction: column;
-  background-image: image-url("new_background_image.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+//  background-image: image-url("suggestions_new_background_image.jpg");
+//  background-position: center;
+//  background-size: cover;
+//  background-repeat: no-repeat;
 }
 
 // background-maskはindexで定義しているものを流用する
@@ -17,11 +17,12 @@ div.show-title-and-suggestion-info{
 }
 
 div.show-title-and-suggestion-info div.show-title{
-  width: 70vw;
-  font-size: 40px;
+  width: 58vw;
+  font-size: 30px;
   font-weight: 700;
   color: blue;
-  text-align: center;
+  text-align: start;
+  margin-left: 7%;
 }
 
 div.show-title-and-suggestion-info div.show-suggestion-info{
@@ -29,7 +30,7 @@ div.show-title-and-suggestion-info div.show-suggestion-info{
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  margin-right: 5vw;
+  margin-right: 10vw;
 }
 
 div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents{
@@ -70,12 +71,12 @@ div.show-target-info-and-map div.show-target-map{
 }
 
 div.show-target-info-and-map div.show-target-info{
-  width: 25%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 2%;
-  margin-right: 10%;
+  margin-right: 7%;
 }
 
 // 改善箇所の場所を示す部分
@@ -158,7 +159,6 @@ div.show-issue-and-ideal div.show-ideal div.show-ideal-comment{
 }
 
 .show-issue-and-ideal-title{
-  color: antiquewhite;
   margin-top: 5px;
   font-size: 18px;
   padding: 5px 0;
@@ -251,6 +251,97 @@ div.show-suggestion div.background-mask div.link a.destroy-btn{
   text-decoration: none;
   color: beige;
   background-color: rgba( red, 0.7);
+  border: solid 1px cornsilk ;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+div.show-suggestion div.background-mask div.link a.link-btn-show-to-evaluation{
+  width: 180px;
+  height: 30px;
+  text-decoration: none;
+  color: beige;
+  background-color: rgba( royalblue, 0.8);
+  border: solid 1px cornsilk ;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+
+// 評価結果
+div.show-evaluation-field{
+  width: 96vw;
+  background-color: royalblue;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 2%;
+  padding: 10px 0;
+}
+
+div.show-evaluation-field h2.title{
+  width: 120px;
+  font-size: 25px;
+  border: ridge 3px black;
+  background-color: skyblue;
+  text-align: center;
+}
+
+div.show-evaluation-field div.show-evaluation-comment-and-score{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 10px 3%;
+}
+
+div.show-evaluation-field div.show-evaluation-comment-and-score p.show-evaluation-comment-form{
+  width: 70%;
+  height: 120px;
+  margin-left: 3%;
+  border: solid 1px white;
+  background-color: rgba(whitesmoke, 0.7);
+  padding: 5px 10px;
+}
+
+div.show-evaluation-field div.show-evaluation-comment-and-score p.show-evaluation-score-form{
+  width: 50px;
+  margin-right: 10%;
+  border: solid 1px white;
+  background-color: rgba(whitesmoke, 0.7);
+  padding: 5px 10px;
+  text-align: center;
+}
+
+div.show-evaluation-field div.link{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+div.show-evaluation-field div.link a.link-btn-show-to-evaluation-edit{
+  width: 180px;
+  height: 30px;
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  border: solid 0.5px cornsilk ;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+div.show-evaluation-field div.link a.destroy-btn-evaluation{
+  width: 180px;
+  height: 30px;
+  text-decoration: none;
+  color: beige;
+  background-color: rgba( red, 0.9);
   border: solid 1px cornsilk ;
   font-size: 20px;
   padding: 5px 10px;

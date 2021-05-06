@@ -10,7 +10,19 @@
               <%= link_to suggestion.title, suggestion_path(suggestion.id), class:"suggestion-link" %>
             </p>
             <p class="evaluated-point">
-              <span class="not-evaluated">未評価</span>
+              <% if suggestion.evaluation != nil && suggestion.evaluation.evaluation_score >= 80 %>
+                <span class="point-great">
+                  <%= suggestion.evaluation.evaluation_score %>点
+                </span>
+              <% elsif suggestion.evaluation != nil && suggestion.evaluation.evaluation_score >= 60 %>
+                <span class="point-better">
+                  <%= suggestion.evaluation.evaluation_score %>点
+                </span>
+              <% elsif suggestion.evaluation != nil %>
+                <%= suggestion.evaluation.evaluation_score %>点
+              <% else %>
+                <span class="not-evaluated">未評価</span>
+              <% end %>
             </p>
           </div>
           <div class="suggestion-category-index">
@@ -18,13 +30,11 @@
           </div>
         </div>
         <div class="suggestion-middle">
-          <% suggestion.before_images.each do |before_image| %>
-            <%= image_tag before_image, class:"before-image" %>
-            <% break %>
+          <% unless suggestion.before_images.first == nil %>
+            <%= image_tag suggestion.before_images.first, class:"before-image" %>
           <% end %>
-          <% suggestion.after_images.each do |after_image| %>
-            <%= image_tag after_image, class:"after-image" %>
-            <% break %>
+          <% unless suggestion.after_images.first == nil %>
+            <%= image_tag suggestion.after_images.first, class:"after-image" %>
           <% end %>
         </div>
         <div class="suggestion-bottom">

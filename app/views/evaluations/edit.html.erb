@@ -1,0 +1,29 @@
+<%= render "shared/evaluation_header" %>
+
+<div class="evaluation-main">
+  <%# サイドバー %>
+  <%= render "evaluations/evaluation_sidebar" %>
+
+  <%# メイン部分 %>
+  <div class="evaluation-area">
+
+    <%# 評価対象の表示部分 %>
+    <div class="show-suggestion">
+      <%= render "suggestions/suggestion" %>
+    </div>
+
+    <%# 採点部分 %>
+    <div class="evaluation-form">
+      <%= form_with local: true, model: @evaluation, url: suggestion_evaluation_path(suggestion_id: params[:suggestion_id], id: params[:id]) do |f| %>
+        <p class="evaluation-input-title">評価記入エリア</p>
+        <div class="evaluation-input">
+          <%= f.text_area :comment, class:"evaluate-comment", placeholder:"コメントを記入して下さい", maxlength:"400" %>
+          <div class="score-and-submit">
+            <%= f.text_field :evaluation_score, class:"evaluate-score", placeholder:"100点満点", maxlength:"400" %>
+            <%= f.submit "評価提出", class:"submit-btn" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

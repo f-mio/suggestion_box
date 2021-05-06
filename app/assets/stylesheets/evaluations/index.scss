@@ -1,0 +1,75 @@
+div.evaluation-main{
+  display: flex;
+  flex-direction: row;
+}
+
+// サイドバー部分
+div.evaluation-main div.evaluation-sidebar{
+  width: 18vw;
+  height: calc(100vh - 20vh);
+  background-color: aquamarine;
+  overflow: auto;
+}
+
+div.evaluation-main div.evaluation-sidebar div.unevaluated-label{
+  padding: 20px 20px 10px 0;
+  text-align: center;
+}
+
+div.evaluation-main div.evaluation-sidebar div.unevaluated-label span{
+  color: black;
+  font-size: 20px;
+}
+
+div.evaluation-main div.evaluation-sidebar a{
+  text-decoration: none;
+}
+
+div.evaluation-main div.evaluation-sidebar div.unevaluated{
+  margin: 5px 15px;
+  border: groove 5px azure;
+}
+
+div.evaluation-main div.evaluation-sidebar div.unevaluated-and-selected{
+  margin: 5px 15px;
+  border: groove 5px red;
+  background-color: whitesmoke;
+  text-overflow: ellipsis;
+}
+
+div.evaluation-main div.evaluation-sidebar div.unevaluated ul li{
+  text-decoration: none;
+}
+
+div.evaluation-main div.evaluation-sidebar div.unevaluated ul li.title{
+  color: blue;
+}
+
+
+// メインの提案と評価部分
+div.evaluation-main div.evaluation-area{
+  width: 82vw;
+  height: 80vh;
+}
+
+div.evaluation-main div.none-evaluation-items{
+  width: 82vw;
+  height: 80vh;
+  color: aliceblue;
+  align-self: center;
+  background-image: image-url("evaluations-index.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:  center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.evaluation-main div.none-evaluation-items p{
+  margin-left: 12%;
+  font-size: 40px;
+}
+
+
+

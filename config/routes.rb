@@ -3,9 +3,14 @@ Rails.application.routes.draw do
   root to: "suggestions#index"
 
   resources :suggestions do
-#    resources :evaluations, only: [:new, :create]
+    resources :evaluations, only: [:new, :create, :edit, :update, :destroy] do
 #      resources :results, only: [:new, :create]
+    end
   end
 
+  resources :evaluations, only: :index
+#  resources :results, only: :index
+
   resources :user_departments_relations, only: [:index, :new, :update, :create, :destroy]
+
 end

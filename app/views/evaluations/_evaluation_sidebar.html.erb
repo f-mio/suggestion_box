@@ -1,0 +1,20 @@
+  <div class="evaluation-sidebar">
+    <div class="unevaluated-label">
+      <span>＜評価対象＞</span>
+    </div>
+    <% @suggestions.each do |suggestion| %>
+      <%= link_to new_suggestion_evaluation_path(suggestion.id) do %>
+      <% if @suggestion != nil && suggestion.id == @suggestion.id %>
+        <div class="unevaluated-and-selected" >
+      <% else %>
+        <div class="unevaluated" >
+      <% end %>
+        <ul>
+          <li class="title"><%= suggestion.title %></li>
+          <li class="name">　<%= suggestion.user.family_name %>さん</li>
+          <li class="post-day">　(<%= suggestion.created_at.strftime("%Y年%m月%d日") %>)</li>
+        </ul>
+      </div>
+      <% end %>
+    <% end %>
+  </div>

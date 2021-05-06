@@ -8,6 +8,7 @@ class User < ApplicationRecord
   # 一人のユーザは複数部署の兼任をせず、一つの代表部署に所属していると仮定する
   has_many :department, through: :user_departments_relations
   has_many :suggestions
+  has_many :evaluations
 
   ### ### ###
   # validation
@@ -15,7 +16,7 @@ class User < ApplicationRecord
   with_options presence: true do
 
     # 1970年から2039年入社までに対応 (20年後までにはメンテナンスが発生する)
-    CORP_CODE_REGEX = /abcd(19[7-9]|2[0-3]\d)\d{4}/.freeze
+    CORP_CODE_REGEX = /abcd(19[7-9]|20[0-3])\d{4}/.freeze
     with_options length: {is: 11, message: "11文字で入力してください"}, format: {with: CORP_CODE_REGEX, message: "abcdと数字7桁で入力してください"}, uniqueness: true do
       validates :corporate_no
     end

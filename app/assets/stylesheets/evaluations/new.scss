@@ -1,0 +1,56 @@
+
+
+div.evaluation-main div.evaluation-area div.show-suggestion{
+  height: 55vh;
+  overflow: auto;
+}
+
+
+div.evaluation-main div.evaluation-area div.evaluation-form{
+  height: 25vh;
+  background-color: royalblue;
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  opacity: 0.7;
+}
+
+div.evaluation-main div.evaluation-area div.evaluation-form div.evaluation-input{
+  display: flex;
+  flex-direction: row;
+}
+
+p.evaluation-input-title{
+  width: 180px;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 10px 10%;
+  padding: 5px;
+  border: solid 1px black;
+  background-color: turquoise;
+  text-align: center;
+}
+
+div.evaluation-main div.evaluation-area div.evaluation-form div.evaluation-input textarea.evaluate-comment{
+  width: 80%;
+  height: 80px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+div.evaluation-main div.evaluation-area div.evaluation-form div.evaluation-input div.score-and-submit{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+div.evaluation-main div.evaluation-area div.evaluation-form div.evaluation-input div.score-and-submit .evaluate-score{
+  width: 150px;
+  height: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+

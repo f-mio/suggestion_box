@@ -42,12 +42,12 @@
       </div>
     </div>
 
-    <div class="link">
-      <%# if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
-        <%#= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
-        <%#= link_to "削除", suggestion_path(params[:id]), method: :delete, class:"destroy-btn" %>
-      <%# end %>
-    </div>
+    <% if @suggestion.writable==false && current_user.id == @suggestion.evaluation.user_id %>
+      <div class="link">
+        <%= link_to "修正ページへ移動", edit_suggestion_evaluation_path(suggestion_id: @suggestion.id, id: @suggestion.evaluation.id), class: "link-btn-show-to-evaluation-edit" %>
+        <%= link_to "削除", suggestion_evaluation_path(suggestion_id: @suggestion.id, id: @suggestion.evaluation.id), method: :delete, class: "destroy-btn-evaluation" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
 

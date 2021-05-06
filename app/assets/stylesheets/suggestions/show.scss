@@ -271,7 +271,6 @@ div.show-suggestion div.background-mask div.link a.link-btn-show-to-evaluation{
 
 
 // 評価結果
-
 div.show-evaluation-field{
   width: 96vw;
   background-color: royalblue;
@@ -314,6 +313,37 @@ div.show-evaluation-field div.show-evaluation-comment-and-score p.show-evaluatio
   margin-right: 10%;
   border: solid 1px white;
   background-color: rgba(whitesmoke, 0.7);
+  padding: 5px 10px;
+  text-align: center;
+}
+
+div.show-evaluation-field div.link{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+div.show-evaluation-field div.link a.link-btn-show-to-evaluation-edit{
+  width: 180px;
+  height: 30px;
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  border: solid 0.5px cornsilk ;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+div.show-evaluation-field div.link a.destroy-btn-evaluation{
+  width: 180px;
+  height: 30px;
+  text-decoration: none;
+  color: beige;
+  background-color: rgba( red, 0.9);
+  border: solid 1px cornsilk ;
+  font-size: 20px;
   padding: 5px 10px;
   text-align: center;
 }

@@ -1,7 +1,8 @@
 class EvaluationsController < ApplicationController
   before_action :validate_users
   before_action :set_suggestions
-  before_action :set_suggestion, only: [:new, :create, :edit]
+  before_action :set_suggestion, only: [:new, :create, :edit, :destroy]
+  before_action :set_evaluation, only: [:edit, :update]
 
   def index
   end
@@ -20,6 +21,24 @@ class EvaluationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @evaluation.update(evaluation_params)
+      @evaluation.save
+      redirect_to suggestion_path(params[:suggestion_id])
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @suggestion.evaluation.destroy
+    Suggestion.update(@suggestion.id, writable: true)
+    redirect_to suggestion_path(@suggestion.id)
   end
 
   private
@@ -58,6 +77,10 @@ class EvaluationsController < ApplicationController
 
   def set_suggestion
     @suggestion = Suggestion.find(params[:suggestion_id])
+  end
+
+  def set_evaluation
+    @evaluation = Evaluation.find(params[:id])
   end
 
   def notification_to_teams

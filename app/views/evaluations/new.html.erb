@@ -13,22 +13,8 @@
     </div>
 
     <%# 採点部分 %>
-    <div class="evaluation-form">
-      <%= form_with local: true, model: @evaluation, url: suggestion_evaluations_path(params[:suggestion_id]) do |f| %>
-        <p class="evaluation-input-title">評価記入エリア</p>
-        <div class="evaluation-input">
-          <%= f.text_area :comment, class:"evaluate-comment", placeholder:"コメントを記入して下さい", maxlength:"400" %>
-          <div class="score-and-submit">
-            <%= f.text_field :evaluation_score, class:"evaluate-point", placeholder:"100点満点", maxlength:"400" %>
-            <%= f.submit "評価提出", class:"submit-btn" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
+    <%= render "evaluations/evaluation_input"%>
   </div>
 </div>
-
-
 
 

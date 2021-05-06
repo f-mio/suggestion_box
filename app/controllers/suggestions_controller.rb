@@ -45,11 +45,6 @@ class SuggestionsController < ApplicationController
 
   private
 
-  # 消す
-  def set_user
-    @user = User.find(current_user.id)
-  end
-
   def set_relations
     @relations = UserDepartmentsRelation.where("user_id = #{current_user.id} AND is_manager = True")
   end

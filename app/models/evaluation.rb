@@ -3,6 +3,7 @@ class Evaluation < ApplicationRecord
   # Association
   belongs_to :suggestion
   belongs_to :user
+  has_one    :result
 
   # Validation
   validates :comment, presence: true

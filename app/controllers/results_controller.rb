@@ -32,8 +32,20 @@ class ResultsController < ApplicationController
   end
 
   def set_suggestions
+    department_ids = UserDepartmentsRelation.where(
+        "user_id = :user_id AND is_manager = true",
+        {user_id: current_user.id }
+      ).pluck(:department_id)
+    sql = "SELECT suggestions.* FROM evaluations "
+    sql += "INNER JOIN suggestions on suggestions.id = evaluations.suggestion_id "
+    sql += "WHERE suggestions.department_id IN (:department_ids);"
+    sql = [sql, {department_ids: department_ids}]
+
+    @suggestions = Suggestion.find_by_sql(sql)
   end
+
 
   def set_suggestion
   end
+
 end

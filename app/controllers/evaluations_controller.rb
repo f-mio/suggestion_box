@@ -58,6 +58,7 @@ class EvaluationsController < ApplicationController
   end
 
   def set_suggestions
+    # 制約条件を定めるためにuser_idに紐づく部署情報を取得し、リストに入れる
     relations = UserDepartmentsRelation.where("user_id = #{current_user.id}")
 
     # 制約条件の設定
@@ -71,6 +72,7 @@ class EvaluationsController < ApplicationController
     end
     conditions += ") AND writable = true "
 
+    # SQLで関連するsuggestion全てを取り出す。
     sql = "SELECT suggestions.* FROM suggestions " + conditions + "ORDER BY suggestions.created_at ASC;"
     @suggestions = Suggestion.find_by_sql(sql)
   end

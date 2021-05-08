@@ -4,12 +4,12 @@ Rails.application.routes.draw do
 
   resources :suggestions do
     resources :evaluations, only: [:new, :create, :edit, :update, :destroy] do
-#      resources :results, only: [:new, :create]
+      resources :results, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 
   resources :evaluations, only: :index
-#  resources :results, only: :index
+  resources :results, only: :index
 
   resources :user_departments_relations, only: [:index, :new, :update, :create, :destroy]
 

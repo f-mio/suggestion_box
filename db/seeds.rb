@@ -7,12 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Department.create([
-#   {id:1, name: "本社",                parent_id: 1},
-#   {id:2, name: "本社 総務部",          parent_id: 2},
-#   {id:3, name: "本社 総務部 総務課",    parent_id: 2},
-#   {id:4, name: "A事業所",             parent_id: 4},
-#   {id:5, name: "α工場 製造部",         parent_id: 4},
-#   {id:6, name: "A工場 製造部 AA製造課", parent_id: 4},
+#   {id:1, name: "本社",                parent_id: 1, layer: 1},
+#   {id:2, name: "本社 総務部",          parent_id: 2, layer: 2},
+#   {id:3, name: "本社 総務部 総務課",    parent_id: 2, layer: 3},
+#   {id:4, name: "A事業所",             parent_id: 4, layer: 1},
+#   {id:5, name: "α工場 製造部",         parent_id: 4, layer: 2},
+#   {id:6, name: "A工場 製造部 AA製造課", parent_id: 4, layer: 3},
+#   {id:7, name: "A工場 製造部 BB製造課", parent_id: 4, layer: 3},
 #   ])
 # Location.create([
 #   {id:1, name: "本社"},

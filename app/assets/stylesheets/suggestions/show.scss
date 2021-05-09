@@ -20,7 +20,7 @@ div.show-title-and-suggestion-info div.show-title{
   width: 58vw;
   font-size: 30px;
   font-weight: 700;
-  color: blue;
+//  color: blue;
   text-align: start;
   margin-left: 7%;
 }
@@ -272,7 +272,7 @@ div.show-suggestion div.background-mask div.link a.link-btn-show-to-evaluation{
 
 // 評価結果
 div.show-evaluation-field{
-  width: 96vw;
+  width: 96%;
   background-color: royalblue;
   opacity: 0.7;
   display: flex;
@@ -343,6 +343,18 @@ div.show-evaluation-field div.link a.destroy-btn-evaluation{
   color: beige;
   background-color: rgba( red, 0.9);
   border: solid 1px cornsilk ;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+div.show-evaluation-field a.link-btn-show-to-result{
+  width: 180px;
+  height: 30px;
+  text-decoration: none;
+  color: black;
+  background-color: goldenrod;
+  border: solid 1px white ;
   font-size: 20px;
   padding: 5px 10px;
   text-align: center;

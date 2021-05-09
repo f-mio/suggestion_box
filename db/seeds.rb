@@ -27,3 +27,8 @@
 #   {id:5, name: "β工場", location_id: 2},
 #   {id:6, name: "事務棟", location_id: 2}
 # ])
+ResultList.create([
+  {id: 1, name: "クローズ"},
+  {id: 2, name: "他部門への情報共有"},
+  {id: 3, name: "審査会対象"},
+])

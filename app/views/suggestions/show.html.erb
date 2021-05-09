@@ -17,38 +17,9 @@
   </div>
 </div>
 
-<%= render "suggestions/suggestion_prev_next" %>
-
 <%# 評価ページ %>
 <% unless @suggestion.evaluation == nil %>
-  <div class="show-evaluation-field">
-    <h2 class="title">
-      評価結果
-    </h2>
-
-    <div class="show-evaluation-comment-and-score">
-      <p class="show-evaluation-comment-form">
-        <%= @suggestion.evaluation.comment %>
-      </p>
-      <div >
-        <p class="show-evaluation-score-form">
-          <%= @suggestion.evaluation.evaluation_score %>
-        </p>
-        <p>
-          <br>
-          ＜評価者＞ <br>
-          <%= ( @suggestion.evaluation.user.family_name + " " + @suggestion.evaluation.user.first_name ) %>さん
-        </p>
-      </div>
-    </div>
-
-    <% if @suggestion.writable==false && current_user.id == @suggestion.evaluation.user_id %>
-      <div class="link">
-        <%= link_to "修正ページへ移動", edit_suggestion_evaluation_path(suggestion_id: @suggestion.id, id: @suggestion.evaluation.id), class: "link-btn-show-to-evaluation-edit" %>
-        <%= link_to "削除", suggestion_evaluation_path(suggestion_id: @suggestion.id, id: @suggestion.evaluation.id), method: :delete, class: "destroy-btn-evaluation" %>
-      </div>
-    <% end %>
-  </div>
+  <%= render "suggestions/evaluation" %>
 <% end %>
 
 <%# 最終評価ページ %>
@@ -56,6 +27,6 @@
   <%#= render "results/result" %>
 </div>
 
-
+<%= render "suggestions/suggestion_prev_next" %>
 
 <%= render "shared/footer" %>

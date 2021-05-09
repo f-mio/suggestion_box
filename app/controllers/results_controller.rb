@@ -1,14 +1,28 @@
 class ResultsController < ApplicationController
-  before_action :validate_user_from_index, only: :index
-  before_action :validate_user, except: :index
+  before_action :validate_user
   before_action :set_suggestions
+  before_action :set_suggestion, only: [:new, :create, :destroy]
 
   def index
   end
 
+  def new
+    @result = Result.new
+  end
+
+  def create
+    @result = Result.new(result_params)
+    if @result.valid?
+      @result.save
+      redirect_to results_path
+    else
+      render :new
+    end
+  end
+
   private
 
-  def validate_user_from_index
+  def validate_user
     ### 親部署の一覧を取得　→　該当ユーザが管理者かつ親部署に所属していることをrelationから調査する。
 
     # 親部署一覧の取得
@@ -16,14 +30,9 @@ class ResultsController < ApplicationController
 
     sql = "SELECT * FROM user_departments_relations "
     sql += "WHERE user_id = #{current_user.id} "
-    parent_ids.each_with_index do |parent_id, idx|
-      if idx == 0
-        sql += "AND ( department_id = #{parent_id} "
-      else
-        sql += "OR department_id = #{parent_id} "
-      end
-    end
-    sql += ") AND is_manager = true;"
+    sql += "AND department_id IN (:department_ids) "
+    sql += "AND is_manager = true;"
+    sql = [sql, {department_ids: parent_ids}]
 
     relations = UserDepartmentsRelation.find_by_sql(sql)
     unless relations.length > 0
@@ -46,6 +55,16 @@ class ResultsController < ApplicationController
 
 
   def set_suggestion
+    @suggestion = Suggestion.find(params[:suggestion_id])
+  end
+
+  def result_params
+    params.require(:result).permit(
+        :comment, :result_list_id
+      ).merge(
+        user_id: current_user.id,
+        department_id: @suggestion.department.parent_id,
+        evaluation_id: params[:evaluation_id])
   end
 
 end

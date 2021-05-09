@@ -1,0 +1,13 @@
+<div class="result-form">
+  <%= form_with local: true, model: @result, url: suggestion_evaluation_results_path(
+        suggestion_id: params[:suggestion_id], evaluation_id: params[:evaluation_id]) do |f| %>
+    <p class="result-input-title">最終評価記入エリア</p>
+    <div class="result-input">
+      <%= f.text_area :comment, class:"result-comment", placeholder:"コメントを記入して下さい", maxlength:"400" %>
+      <div class="list-and-submit">
+        <%= f.collection_select :result_list_id, ResultList.all, :id, :name, {}, {class:"result-list", id:"result-list"} %>
+        <%= f.submit "評価提出", class:"submit-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>

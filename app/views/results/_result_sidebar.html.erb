@@ -1,9 +1,9 @@
-<div class="evaluation-sidebar">
-  <div class="unevaluated-label">
+<div class="result-sidebar">
+  <div class="unevaluated-title">
     <span>＜評価対象＞</span>
   </div>
   <% @suggestions.each do |suggestion| %>
-    <%= link_to new_suggestion_evaluation_path(suggestion.id) do %>
+    <%= link_to new_suggestion_evaluation_result_path(suggestion_id: suggestion.id, evaluation_id: suggestion.evaluation.id) do %>
     <% if @suggestion != nil && suggestion.id == @suggestion.id %>
       <div class="unevaluated-and-selected">
     <% else %>

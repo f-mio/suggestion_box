@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
   before_action :validate_user
   before_action :set_suggestions
-  before_action :set_suggestion, only: [:new, :create, :destroy]
+  before_action :set_suggestion, only: [:new, :create, :edit, :update, :destroy]
 
   def index
   end
@@ -19,6 +19,23 @@ class ResultsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @result = @suggestion.evaluation.result
+  end
+
+  def update
+    @result = @suggestion.evaluation.result
+    if @result.update(result_params)
+      redirect_to results_path
+    else
+      render :edit
+    end
+  end
+
+  def delete
+  end
+
 
   private
 

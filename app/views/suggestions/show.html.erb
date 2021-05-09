@@ -20,12 +20,12 @@
 <%# 評価ページ %>
 <% unless @suggestion.evaluation == nil %>
   <%= render "suggestions/evaluation" %>
-<% end %>
 
 <%# 最終評価ページ %>
-<div class="show-result-field">
-  <%#= render "results/result" %>
-</div>
+  <% unless @suggestion.evaluation.result == nil %>
+    <%= render "suggestions/result" %>
+  <% end %>
+<% end %>
 
 <%= render "suggestions/suggestion_prev_next" %>
 

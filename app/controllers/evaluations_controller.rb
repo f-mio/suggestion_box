@@ -28,7 +28,6 @@ class EvaluationsController < ApplicationController
 
   def update
     if @evaluation.update(evaluation_params)
-      @evaluation.save
       redirect_to suggestion_path(params[:suggestion_id])
     else
       render :edit

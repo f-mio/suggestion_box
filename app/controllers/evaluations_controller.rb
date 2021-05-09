@@ -2,7 +2,7 @@ class EvaluationsController < ApplicationController
   before_action :validate_users
   before_action :set_suggestions
   before_action :set_suggestion, only: [:new, :create, :edit, :destroy]
-  before_action :set_evaluation, only: [:edit, :update]
+  before_action :set_evaluation, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -35,7 +35,7 @@ class EvaluationsController < ApplicationController
   end
 
   def destroy
-    @suggestion.evaluation.destroy
+    @evaluation.destroy
     Suggestion.update(@suggestion.id, writable: true)
     redirect_to suggestion_path(@suggestion.id)
   end

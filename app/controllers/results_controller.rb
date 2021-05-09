@@ -2,6 +2,7 @@ class ResultsController < ApplicationController
   before_action :validate_user
   before_action :set_suggestions
   before_action :set_suggestion, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_result, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -21,11 +22,9 @@ class ResultsController < ApplicationController
   end
 
   def edit
-    @result = @suggestion.evaluation.result
   end
 
   def update
-    @result = @suggestion.evaluation.result
     if @result.update(result_params)
       redirect_to results_path
     else
@@ -33,7 +32,9 @@ class ResultsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @result.destroy
+    redirect_to suggestion_path(@suggestion.id)
   end
 
 
@@ -73,6 +74,10 @@ class ResultsController < ApplicationController
 
   def set_suggestion
     @suggestion = Suggestion.find(params[:suggestion_id])
+  end
+
+  def set_result
+    @result = @suggestion.evaluation.result
   end
 
   def result_params

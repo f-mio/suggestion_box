@@ -2,7 +2,7 @@ class EvaluationsController < ApplicationController
   before_action :validate_users
   before_action :set_suggestions
   before_action :set_suggestion, only: [:new, :create, :edit, :destroy]
-  before_action :set_evaluation, only: [:edit, :update]
+  before_action :set_evaluation, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -28,7 +28,6 @@ class EvaluationsController < ApplicationController
 
   def update
     if @evaluation.update(evaluation_params)
-      @evaluation.save
       redirect_to suggestion_path(params[:suggestion_id])
     else
       render :edit
@@ -36,7 +35,7 @@ class EvaluationsController < ApplicationController
   end
 
   def destroy
-    @suggestion.evaluation.destroy
+    @evaluation.destroy
     Suggestion.update(@suggestion.id, writable: true)
     redirect_to suggestion_path(@suggestion.id)
   end
@@ -58,6 +57,7 @@ class EvaluationsController < ApplicationController
   end
 
   def set_suggestions
+    # 制約条件を定めるためにuser_idに紐づく部署情報を取得し、リストに入れる
     relations = UserDepartmentsRelation.where("user_id = #{current_user.id}")
 
     # 制約条件の設定
@@ -71,6 +71,7 @@ class EvaluationsController < ApplicationController
     end
     conditions += ") AND writable = true "
 
+    # SQLで関連するsuggestion全てを取り出す。
     sql = "SELECT suggestions.* FROM suggestions " + conditions + "ORDER BY suggestions.created_at ASC;"
     @suggestions = Suggestion.find_by_sql(sql)
   end

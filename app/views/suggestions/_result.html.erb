@@ -1,0 +1,32 @@
+<div class="show-result-field">
+  <h2 class="title">
+    最終評価結果
+  </h2>
+
+  <div class="show-result-list-and-comment">
+    <p class="show-result-comment">
+      <%= @suggestion.evaluation.comment %>
+    </p>
+    <div>
+      <p class="show-result-list">
+        <%= @suggestion.evaluation.result.result_list.name %>
+      </p>
+      <p>
+        <br>
+        ＜評価者＞ <br>
+        <%= ( @suggestion.evaluation.result.user.family_name + " " + @suggestion.evaluation.result.user.first_name ) %>さん
+      </p>
+    </div>
+  </div>
+
+  <% if @suggestion.evaluation.result != nil && current_user.id == @suggestion.evaluation.result.user_id %>
+    <div class="link">
+      <%= link_to "修正ページへ移動", edit_suggestion_evaluation_result_path(
+          suggestion_id: @suggestion.id, evaluation_id: @suggestion.evaluation.id,
+          id: @suggestion.evaluation.result.id), class: "link-btn-show-to-evaluation-edit" %>
+      <%= link_to "削除", suggestion_evaluation_result_path(
+          suggestion_id: @suggestion.id, evaluation_id: @suggestion.evaluation.id,
+          id: @suggestion.evaluation.result.id), method: :delete, class: "destroy-btn-result" %>
+    </div>
+  <% end %>
+</div>

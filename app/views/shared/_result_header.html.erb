@@ -1,4 +1,4 @@
-<div class="header">
+<div class="result-header">
   <div class="left-header">
     <%= link_to "Suggestions Box", root_path, class:"header-title"%>
     <% if user_signed_in? %>
@@ -9,13 +9,8 @@
         <div class="more">
           <span class="menu">メニュー</span>
           <ul class="more_list">
+            <li><%= link_to 'メインページ', root_path, method: :get %></li>
             <% if UserDepartmentsRelation.where(
-                    "is_manager = true AND user_id = :user_id AND department_id IN (:department) ",
-                    {user_id: current_user.id, department: (Department.pluck(:parent_id).uniq)}).length > 0 ||
-                  current_user.id == 1 %>
-              <li><%= link_to '評価ページ', evaluations_path, method: :get %></li>
-              <li><%= link_to '最終評価ページ', results_path, method: :get %></li>
-            <% elsif UserDepartmentsRelation.where(
                     "is_manager = true AND user_id = :user_id",
                     {user_id: current_user.id}).length > 0 || current_user.id ==1 %>
               <li><%= link_to '評価ページ', evaluations_path, method: :get %></li>
@@ -35,22 +30,10 @@
     <% end %>
   </div>
   <div class="right-header">
-    <div class="header-search-area">
-      <div class="header-search">
-        <div class="search-form"></div>
-        <div class="search-btn"></div>
-        <%# 本番は下記の検索フォームを入れ込む %>
-        <%#= form_with "#", root_path , placeholder: "ワード検索" , class:"header-search", local: true do |f| %>
-          <%#= f.text_field :keyword, class:search-form %>
-          <%#= f.submit class:"search-btn" %>
-        <%# end %>
-      </div>
-      <div class="header-items">
-        <p class="header-item">時期</p>
-        <p class="header-item">カテゴリー</p>
-        <p class="header-item">部署</p>
-        <p class="header-item">評価</p>
-      </div>
-    </div>
+    <p class="result-page-title">
+      〜　最終評価ページ　〜
+    </p>
+    <p class="result-department">
+    </p>
   </div>
 </div>

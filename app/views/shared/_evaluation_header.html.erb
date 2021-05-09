@@ -10,9 +10,13 @@
           <span class="menu">メニュー</span>
           <ul class="more_list">
             <li><%= link_to 'メインページ', root_path, method: :get %></li>
-            <% if true %>
-              <li><%= link_to '評価ページ', evaluations_path, method: :get %></li>
-            <% elsif current_user.id == 1 %>
+            <% if UserDepartmentsRelation.where(
+                    "is_manager = true AND user_id = :user_id AND department_id IN (:department) ",
+                    {user_id: current_user.id, department: (Department.pluck(:parent_id).uniq)}).length > 0 ||
+                  curret_user.id == 1 %>
+              <li><%= link_to '最終評価ページ', results_path, method: :get %></li>
+            <%end%>
+            <% if current_user.id == 1 %>
               <li><%= link_to '部署情報編集ページ', user_departments_relations_path, method: :get %></li>
             <%end%>
             <li><%= link_to 'ユーザ登録編集', edit_user_registration_path, method: :get %></li>

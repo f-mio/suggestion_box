@@ -1,4 +1,4 @@
-.evaluation-header{
+.result-header{
   width: 100vw;
   height: 20vh;
   background-image: image-url('suggestionbox_evaluation_header.jpg');
@@ -9,7 +9,7 @@
   flex-direction: row;
 }
 
-div.evaluation-header div.left-header a.header-title{
+div.result-header div.left-header a.header-title{
   color: beige;
   font-size: 48px;
   text-align: center;
@@ -17,7 +17,7 @@ div.evaluation-header div.left-header a.header-title{
   text-decoration: none;
 }
 
-div.evaluation-header div.left-header div.user-info-field{
+div.result-header div.left-header div.user-info-field{
   font-size: 18px;
   color:  aliceblue;
   font-weight: 400;
@@ -28,7 +28,7 @@ div.evaluation-header div.left-header div.user-info-field{
   align-items: center;
 }
 
-div.evaluation-header div.left-header div.user-info-field div.more span.menu{
+div.result-header div.left-header div.user-info-field div.more span.menu{
   color: white;
   background-color: salmon;
   opacity: 0.9;
@@ -38,18 +38,18 @@ div.evaluation-header div.left-header div.user-info-field div.more span.menu{
 }
 
 
-div.evaluation-header div.left-header div.user-info-field div.more ul.more_list{
+div.result-header div.left-header div.user-info-field div.more ul.more_list{
   display: none;
 }
 
-div.evaluation-header div.left-header div.user-info-field div.more:hover ul.more_list{
+div.result-header div.left-header div.user-info-field div.more:hover ul.more_list{
   display: flex;
   flex-direction: column;
   font-size: 18px;
   position: absolute;
 }
 
-div.evaluation-header div.left-header div.user-info-field div.more ul.more_list li{
+div.result-header div.left-header div.user-info-field div.more ul.more_list li{
   color: aliceblue;
   font-size: 18px;
   text-decoration: none;
@@ -62,13 +62,13 @@ div.evaluation-header div.left-header div.user-info-field div.more ul.more_list 
 
 // 右側のヘッダー
 
-div.evaluation-header div.right-header{
+div.result-header div.right-header{
   display: flex;
   flex-direction: column;
   align-items: start;
 }
 
-div.evaluation-header div.right-header p.evaluation-page-title{
+div.result-header div.right-header p.result-page-title{
   font-size: 40px;
   color: aliceblue;
   background-color: black;

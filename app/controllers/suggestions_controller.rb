@@ -1,5 +1,4 @@
 class SuggestionsController < ApplicationController
-#  before_action :set_user, only: [:index, :new, :show, :edit, :create, :destroy]
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
   before_action :set_relations, only: [:index, :edit, :show]
   before_action :validate_suggestion_state, only: [:edit, :update, :destroy]
@@ -43,6 +42,7 @@ class SuggestionsController < ApplicationController
     redirect_to root_path
   end
 
+
   private
 
   def set_relations
@@ -59,7 +59,6 @@ class SuggestionsController < ApplicationController
     end
   end
 
-  #投稿機能実装時に入れ込む
   def suggestion_params
     sql = "SELECT * FROM user_departments_relations WHERE user_id = #{current_user.id} ORDER BY department_id;"
     relation = UserDepartmentsRelation.find_by_sql(sql).first
@@ -67,7 +66,8 @@ class SuggestionsController < ApplicationController
         :title, :issue, :ideal, :category_id,
         :location_id, :place_id, :target,
         :effect, before_images: [], after_images: []
-      ).merge(user_id: current_user.id,
+      ).merge(
+        user_id: current_user.id,
         department_id: relation.department_id,
         writable: true
       )

@@ -1,4 +1,5 @@
 class SuggestionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
   before_action :set_relations, only: [:index, :edit, :show]
   before_action :validate_suggestion_state, only: [:edit, :update, :destroy]
@@ -40,6 +41,12 @@ class SuggestionsController < ApplicationController
   def destroy
     @suggestion.destroy
     redirect_to root_path
+  end
+
+  def search
+    @suggestions = Suggestion.where(
+      "issue LIKE %:keyword% OR issue LIKE %:keyword% OR effect LIKE %:keyword%",
+      {keyword: params[:keyword]})
   end
 
 

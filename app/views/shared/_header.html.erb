@@ -37,19 +37,33 @@
   <div class="right-header">
     <div class="header-search-area">
       <div class="header-search">
-        <div class="search-form"></div>
-        <div class="search-btn"></div>
         <%# 本番は下記の検索フォームを入れ込む %>
-        <%#= form_with "#", root_path , placeholder: "ワード検索" , class:"header-search", local: true do |f| %>
-          <%#= f.text_field :keyword, class:search-form %>
-          <%#= f.submit class:"search-btn" %>
-        <%# end %>
+        <%= form_with local: true, url:search_suggestions_path,method: :get, placeholder: "ワード検索" , class:"header-search" do |f| %>
+          <%= f.text_field :keyword, class:"search-form" %>
+          <%= f.submit "▼", class:"search-btn" %>
       </div>
-      <div class="header-items">
-        <p class="header-item">時期</p>
-        <p class="header-item">カテゴリー</p>
-        <p class="header-item">部署</p>
-        <p class="header-item">評価</p>
+      <div class="filter-contents">
+        <p class="filter-content">
+          <span class="filter-label">提出時期</span>
+          <%= f.text_field :filter_start_date, class:"filter-start-date-box", placeholder: "---" %>
+        </p>
+        <p class="filter-content">
+          <span class="filter-label">ロケーション</span>
+          <%= f.collection_select :filter_location_id, Location.all, :id, :name, {}, {class:"filter-box", id:"filter-location"} %>
+        </p>
+        <p class="filter-content">
+          <span class="filter-label">部署名</span>
+          <%= f.collection_select :filter_department_id, Department.all, :id, :name, {}, {class:"filter-department-box", id:"filter-category"} %>
+        </p>
+        <p class="filter-content">
+          <span class="filter-label">評価点</span>
+          <%= f.text_field :filter_score, class:"filter-score-box", placeholder: "---" %>
+        </p>
+        <p class="filter-content">
+          <span class="filter-label">採点結果</span>
+          <%= f.collection_select :filter_result, ResultList.all, :id, :name, {}, {class:"filter-result-box", id:"filter-result"} %>
+        </p>
+        <% end %>
       </div>
     </div>
   </div>

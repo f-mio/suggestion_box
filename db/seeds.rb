@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Department.create([
+#  Department.create([
+#   {id:0, name: '---',                parent_id: 0, layer: 0},
 #   {id:1, name: "本社",                parent_id: 1, layer: 1},
 #   {id:2, name: "本社 総務部",          parent_id: 2, layer: 2},
 #   {id:3, name: "本社 総務部 総務課",    parent_id: 2, layer: 3},
@@ -14,8 +15,9 @@
 #   {id:5, name: "α工場 製造部",         parent_id: 4, layer: 2},
 #   {id:6, name: "A工場 製造部 AA製造課", parent_id: 4, layer: 3},
 #   {id:7, name: "A工場 製造部 BB製造課", parent_id: 4, layer: 3},
-#   ])
-# Location.create([
+#    ])
+#  Location.create([
+#   {id:0, name: '---' },
 #   {id:1, name: "本社"},
 #   {id:2, name: "A事業所"},
 # ])
@@ -26,9 +28,10 @@
 #   {id:4, name: "α工場", location_id: 2},
 #   {id:5, name: "β工場", location_id: 2},
 #   {id:6, name: "事務棟", location_id: 2}
+#  ])
+# ResultList.create([
+#   {id: 0, name: '---' },
+#   {id: 1, name: "クローズ"},
+#   {id: 2, name: "他部門への情報共有"},
+#   {id: 3, name: "審査会対象"},
 # ])
-ResultList.create([
-  {id: 1, name: "クローズ"},
-  {id: 2, name: "他部門への情報共有"},
-  {id: 3, name: "審査会対象"},
-])

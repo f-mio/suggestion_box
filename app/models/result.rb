@@ -7,5 +7,5 @@ class Result < ApplicationRecord
 
   # Validation
   validates :comment, presence: true
-  validates :result_list_id, numericality: {only_integer: true}
+  validates :result_list_id, numericality: {only_integer: true, other_than: 0}
 end

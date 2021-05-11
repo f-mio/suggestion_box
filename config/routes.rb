@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :evaluations, only: [:new, :create, :edit, :update, :destroy] do
       resources :results, only: [:new, :create, :edit, :update, :destroy]
     end
+
+    collection do
+      get 'search'
+    end
   end
 
   resources :evaluations, only: :index

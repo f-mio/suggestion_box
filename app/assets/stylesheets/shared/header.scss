@@ -87,6 +87,7 @@ div.header div.left-header div.user-info-field div.more:hover ul.more_list li:ho
   flex-direction: column;
   justify-content: center;
   align-content: space-around;
+  margin-top: 4%;
 }
 
 .header-search{
@@ -99,32 +100,89 @@ div.header div.left-header div.user-info-field div.more:hover ul.more_list li:ho
 .search-form{
   width: 500px;
   height: 30px;
-  background-color: azure;
+  background-color: whitesmoke;
   border: solid 1px black;
 }
 
 .search-btn{
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   background-color: lightslategray;
   border: solid 1px black;
 }
 
-.header-items{
+.filter-contents{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 7px;
   margin-left: 100px;
   margin-right: 100px;
 }
 
-.header-item{
+.filter-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter-label{
+  width: 90%;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgba(white, 0.5);
+  border-radius: 10%;
+  text-align: center;
+}
+
+.filter-start-date-box{
   width: 100px;
-  height: 20px;
+  height: 24px;
   border: solid 0.5px black;
   font-size: 16px;
   padding: 1px;
   text-align: center;
-  background-color: grey;
+  background-color: whitesmoke;
+}
+
+.filter-box{
+  width: 100px;
+  height: 24px;
+  border: solid 0.5px black;
+  font-size: 16px;
+  padding: 1px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.filter-department-box{
+  width: 200px;
+  height: 24px;
+  border: solid 0.5px black;
+  font-size: 16px;
+  padding: 1px;
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.filter-score-box{
+  width: 80px;
+  height: 20px;
+  border: solid 0.5px black;
+  font-size: 14px;
+  padding: 1px;
+  text-align: center;
+  background-color: rgba( royalblue, 0.8 );
+}
+
+
+.filter-result-box{
+  width: 150px;
+  height: 24px;
+  border: solid 0.5px black;
+  font-size: 14px;
+  padding: 1px;
+  text-align: start;
+  background-color: rgba( goldenrod, 0.8 );
 }

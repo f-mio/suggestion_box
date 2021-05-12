@@ -43,26 +43,30 @@
           <%= f.submit "▼", class:"search-btn" %>
       </div>
       <div class="filter-contents">
-        <p class="filter-content">
+        <div class="filter-content">
           <span class="filter-label">提出時期</span>
-          <%= f.text_field :filter_start_date, class:"filter-start-date-box", placeholder: "---" %>
-        </p>
-        <p class="filter-content">
+          <p class="filter-dates">
+            <%= f.date_field :filter_start_date, class:"filter-date-box", placeholder: "開始" %>
+            〜
+            <%= f.date_field :filter_end_date, class:"filter-date-box", placeholder: "終了" %>
+          </p>
+        </div>
+        <div class="filter-content">
           <span class="filter-label">ロケーション</span>
-          <%= f.collection_select :filter_location_id, Location.all, :id, :name, {}, {class:"filter-box", id:"filter-location"} %>
-        </p>
-        <p class="filter-content">
+          <%= f.collection_select :filter_location, Location.all, :id, :name, {}, {class:"filter-box", id:"filter-location"} %>
+        </div>
+        <div class="filter-content">
           <span class="filter-label">部署名</span>
-          <%= f.collection_select :filter_department_id, Department.all, :id, :name, {}, {class:"filter-department-box", id:"filter-category"} %>
-        </p>
-        <p class="filter-content">
+          <%= f.collection_select :filter_department, Department.all, :id, :name, {}, {class:"filter-department-box", id:"filter-category"} %>
+        </div>
+        <div class="filter-content">
           <span class="filter-label">評価点</span>
           <%= f.text_field :filter_score, class:"filter-score-box", placeholder: "---" %>
-        </p>
-        <p class="filter-content">
+        </div>
+        <div class="filter-content">
           <span class="filter-label">採点結果</span>
           <%= f.collection_select :filter_result, ResultList.all, :id, :name, {}, {class:"filter-result-box", id:"filter-result"} %>
-        </p>
+        </div>
         <% end %>
       </div>
     </div>

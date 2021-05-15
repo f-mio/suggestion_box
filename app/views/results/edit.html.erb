@@ -6,8 +6,8 @@
 
   <div class="result-area">
     <div class="show-suggestion">
-      <%= render "suggestions/suggestion" %>
-      <%= render "suggestions/evaluation" %>
+      <%= render "suggestions/show_suggestion" %>
+      <%= render "suggestions/show_evaluation" %>
     </div>
     <div class="result-form">
       <%= form_with local: true, model: @result, url: suggestion_evaluation_result_path(

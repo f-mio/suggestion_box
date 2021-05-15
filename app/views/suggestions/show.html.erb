@@ -4,7 +4,7 @@
 
 <div class="show-suggestion">
   <div class="background-mask">
-    <%= render "suggestions/suggestion" %>
+    <%= render "suggestions/show_suggestion" %>
     <div class="link">
       <% if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
         <%= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
@@ -19,11 +19,11 @@
 
 <%# 評価ページ %>
 <% unless @suggestion.evaluation == nil %>
-  <%= render "suggestions/evaluation" %>
+  <%= render "suggestions/show_evaluation" %>
 
 <%# 最終評価ページ %>
   <% unless @suggestion.evaluation.result == nil %>
-    <%= render "suggestions/result" %>
+    <%= render "suggestions/show_result" %>
   <% end %>
 <% end %>
 

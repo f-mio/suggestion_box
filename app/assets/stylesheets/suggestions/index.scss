@@ -44,7 +44,7 @@
   padding: 2px 0;
 }
 
-div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point p.title{
+div.suggestion div.suggestion-top div.suggestion-title-and-point p.title{
   width: 75%;
   font-size: 25px;
   color: blue;
@@ -52,28 +52,28 @@ div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-
   font-weight: 700;
 }
 
-div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point p.title a.suggestion-link{
+div.suggestion div.suggestion-top div.suggestion-title-and-point p.title a.suggestion-link{
   text-decoration: none;
 }
 
-div.main div.suggestions-field div.suggestion div.suggestion-top div.suggestion-title-and-point p.evaluated-point{
+div.suggestion div.suggestion-top div.suggestion-title-and-point p.evaluated-point{
   width: 20%;
   font-size: 20px;
   align-self: flex-start;
   margin-top: 5px;
 }
 
-div.main div.suggestions-field div.suggestion div.suggestion-top p.evaluated-point span.point-better{
+div.suggestion div.suggestion-top p.evaluated-point span.point-better{
   color: blue;
 }
 
-div.main div.suggestions-field div.suggestion div.suggestion-top p.evaluated-point span.point-great{
+div.suggestion div.suggestion-top p.evaluated-point span.point-great{
   color: black;
   background-color: gold;
   padding: 5px;
 }
 
-div.main div.suggestions-field div.suggestion div.suggestion-top p.evaluated-point span.not-evaluated{
+div.suggestion div.suggestion-top p.evaluated-point span.not-evaluated{
   font-weight: 100;
   color: skyblue;
 }

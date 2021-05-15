@@ -14,9 +14,8 @@ class Suggestion < ApplicationRecord
   # Validation
   with_options presence: true do
     validates :title, :issue, :ideal, :target, :effect
-    validates :category_id, numericality: {only_integer: true, other_than: 0}
-    with_options numericality: {only_integer: true} do
-      validates :location_id, :place_id
+    with_options numericality: {only_integer: true, other_than: 0} do
+      validates :location_id, :place_id, :category_id
     end
   end
 

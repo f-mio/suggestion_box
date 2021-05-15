@@ -57,15 +57,15 @@
         </div>
         <div class="filter-content">
           <span class="filter-label">部署名</span>
-          <%= f.collection_select :filter_department, Department.all, :id, :name, {}, {class:"filter-department-box", id:"filter-category"} %>
+          <%= f.collection_select :filter_department, Department.all, :id, :name, {}, {class:"filter-department-box", id:"filter-department"} %>
         </div>
         <div class="filter-content">
-          <span class="filter-label">評価点</span>
-          <%= f.text_field :filter_score, class:"filter-score-box", placeholder: "---" %>
+          <span class="filter-label">点数</span>
+          <%= f.collection_select :filter_score, FilterScore.all, :id, :name, {}, {class:"filter-score-box", id:"filter-score"} %>
         </div>
         <div class="filter-content">
-          <span class="filter-label">採点結果</span>
-          <%= f.collection_select :filter_result, ResultList.all, :id, :name, {}, {class:"filter-result-box", id:"filter-result"} %>
+          <span class="filter-label">最終結果</span>
+          <%= f.collection_select :filter_result, FilterResult.all, :id, :name, {}, {class:"filter-result-box", id:"filter-result"} %>
         </div>
         <% end %>
       </div>

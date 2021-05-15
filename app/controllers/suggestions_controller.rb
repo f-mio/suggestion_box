@@ -6,8 +6,7 @@ class SuggestionsController < ApplicationController
 
 
   def index
-    sql = "SELECT * FROM suggestions ORDER BY created_at desc"
-    @suggestions = Suggestion.find_by_sql(sql)
+    @suggestions = Suggestion.all.order(created_at: "DESC")
   end
 
   def new
@@ -44,9 +43,8 @@ class SuggestionsController < ApplicationController
   end
 
   def search
-    @suggestions = Suggestion.where(
-      "issue LIKE %:keyword% OR issue LIKE %:keyword% OR effect LIKE %:keyword%",
-      {keyword: params[:keyword]})
+    condition, filter_hash = set_condition
+    @suggestions = Suggestion.where(condition, filter_hash).order(created_at: "DESC")
   end
 
 
@@ -78,5 +76,78 @@ class SuggestionsController < ApplicationController
         department_id: relation.department_id,
         writable: true
       )
+  end
+
+  def set_condition
+    condition = ""
+    filter_hash = {}
+    unless params[:keyword]==""
+      condition += "(issue LIKE :keyword OR issue LIKE :keyword OR effect LIKE :keyword)"
+      filter_hash[:keyword] = '%' + params[:keyword] +'%'
+    end
+
+    if params[:filter_start_date]!="" && params[:filter_end_date]!=""
+      condition = set_connection(condition)
+      condition += "created_at BETWEEN :start_date AND :end_date"
+      filter_hash[:start_date] = params[:filter_start_date]
+      filter_hash[:end_date] = params[:filter_end_date].to_date+1
+    elsif params[:filter_start_date] != ""
+      condition = set_connection(condition)
+      condition += "created_at >= :start_date"
+      filter_hash[:start_date] = params[:filter_start_date]
+    elsif params[:filter_end_date] != ""
+      condition = set_connection(condition)
+      condition += "created_at <= :end_date"
+      filter_hash[:end_date] = params[:filter_end_date].to_date+1
+    end
+
+    unless params[:filter_location]=="0"
+      condition = set_connection(condition)
+      condition += "location_id = :filter_location"
+      filter_hash[:filter_location] = params[:filter_location]
+    end
+
+    unless params[:filter_department]=="0"
+      condition = set_connection(condition)
+      condition += "department_id = :filter_department"
+      filter_hash[:filter_department] = params[:filter_department]
+    end
+
+    unless params[:filter_score]=="0"
+      condition = set_connection(condition)
+      if params[:filter_score]=="1"
+        condition += "NOT EXISTS  (SELECT evaluations.* FROM evaluations"
+        condition += " WHERE evaluations.suggestion_id = suggestions.id)"
+      else
+        condition += "EXISTS (SELECT evaluations.* FROM evaluations"
+        condition += " WHERE evaluations.suggestion_id = suggestions.id"
+        condition += " AND evaluations.evaluation_score >= :filter_score)"
+        filter_hash[:filter_score] = params[:filter_score]
+      end
+    end
+
+    unless params[:filter_result] == "0"
+      condition = set_connection(condition)
+      if params[:filter_result]=="99"
+        condition += "NOT EXISTS (SELECT results.id FROM evaluations"
+        condition += " RIGHT JOIN results ON evaluations.id = results.evaluation_id"
+        condition += " WHERE evaluations.suggestion_id = suggestions.id)"
+      else
+        condition += "EXISTS (SELECT results.id FROM evaluations"
+        condition += " RIGHT JOIN results ON evaluations.id = results.evaluation_id"
+        condition += " WHERE evaluations.suggestion_id = suggestions.id"
+        condition += " AND results.result_list_id = :filter_result)"
+        filter_hash[:filter_result] = params[:filter_result]
+      end
+    end
+
+    return condition, filter_hash
+  end
+
+  def set_connection(condition)
+    if condition.length > 0
+      condition += " AND "
+    end
+    return condition
   end
 end

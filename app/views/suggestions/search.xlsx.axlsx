@@ -1,0 +1,48 @@
+
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "suggestion_box") do |sheet|
+  sheet.add_row ["管理番号", "タイトル", "提案部署", 
+                  "提案者名",
+                  "提案日",
+                  "カテゴリー", "対象事業所",
+                  "対象エリア", "対象",
+                  "問題点", "理想の姿", "効果",
+                  "評価点","評価コメント",
+                  "評価者",
+                  "最終評価結果","最終評価コメント",
+                  "最終評価者"]
+  @suggestions.each do |suggestion|
+    if suggestion.evaluation!=nil && suggestion.evaluation.result!=nil
+      sheet.add_row [suggestion.id, suggestion.title, suggestion.department.name,
+                      (suggestion.user.family_name + " " + suggestion.user.first_name),
+                      suggestion.created_at.strftime("%Y年%m月%d日"),
+                      suggestion.category.name, suggestion.location.name,
+                      suggestion.place.name, suggestion.target,
+                      suggestion.issue, suggestion.ideal, suggestion.effect,
+                      suggestion.evaluation.evaluation_score, suggestion.evaluation.comment,
+                      (suggestion.evaluation.user.family_name + " " + suggestion.evaluation.user.first_name),
+                      ResultList.find(suggestion.evaluation.result.result_list_id).name,
+                      suggestion.evaluation.result.comment,
+                      (suggestion.evaluation.result.user.family_name + " " + suggestion.evaluation.result.user.first_name)
+                    ]
+    elsif suggestion.evaluation!=nil
+      sheet.add_row [suggestion.id, suggestion.title, suggestion.department.name,
+                      (suggestion.user.family_name + " " + suggestion.user.first_name),
+                      suggestion.created_at.strftime("%Y年%m月%d日"),
+                      suggestion.category.name, suggestion.location.name,
+                      suggestion.place.name, suggestion.target,
+                      suggestion.issue, suggestion.ideal, suggestion.effect,
+                      suggestion.evaluation.evaluation_score, suggestion.evaluation.comment,
+                      (suggestion.evaluation.user.family_name + " " + suggestion.evaluation.user.first_name)
+                    ]
+    else
+      sheet.add_row [suggestion.id, suggestion.title, suggestion.department.name,
+                      (suggestion.user.family_name + " " + suggestion.user.first_name),
+                      suggestion.created_at.strftime("%Y年%m月%d日"),
+                      suggestion.category.name, suggestion.location.name,
+                      suggestion.place.name, suggestion.target,
+                      suggestion.issue, suggestion.ideal, suggestion.effect,
+                    ]
+    end
+  end
+end

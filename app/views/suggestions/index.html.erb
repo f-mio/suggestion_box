@@ -61,4 +61,8 @@
   <%= image_tag 'comment.png', size: '60x90', class: "suggestion-btn-icon" %>
 <% end %>
 
+<div class="output">
+  <%= link_to "エクセルへの全件エクスポート", suggestions_path(@suggestion, format: :xlsx) ,class:"export-all-to-excel" %>
+</div>
+
 <%= render "shared/footer" %>

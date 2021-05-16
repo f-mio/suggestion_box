@@ -126,6 +126,25 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
   }
 }
 
+
+div.output{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+div.output a.export-all-to-excel{
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border: solid 1px black;
+  padding: 5px;
+}
+
+
 /* スマホ表示時 */
 /*
 @media (max-width: 500px) {

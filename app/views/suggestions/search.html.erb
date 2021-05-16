@@ -3,6 +3,8 @@
 
 <h1 class="title">【検索結果一覧】</h1>
 
+<%= link_to "エクセル", search_suggestions_path(@suggestions, format: :xlsx) %>
+
 <div class="suggestions-field">
   <% if @suggestions.length > 0 %>
     <%= render partial: "suggestions/suggestion", collection: @suggestions %>

@@ -1,6 +1,5 @@
 /* suggestions index css */
 
-
 div.main{
   width: 100vw;
   display: flex;
@@ -17,11 +16,11 @@ div.sidebar{
   flex-direction: column;
   position: relative; top:0; left:0;
   overflow: auto;
+  border-right: solid 1px gray;
 }
 
 
 // メイン部分のcss
-
 div.suggestions-field{
   width: 82vw;
   height: calc(100vh - 20vh);
@@ -104,8 +103,6 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
   font-weight: 700;
 }
 
-
-
 .suggestion-middle{
   display: flex;
   flex-direction: row;
@@ -141,15 +138,6 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
     font-size: 25px;
   }
 }
-
-
-div.export{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 15px;
-}
-
 
 
 /* スマホ表示時 */

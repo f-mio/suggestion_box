@@ -1,30 +1,36 @@
 
 <%= render "shared/header" %>
 
-<h1 class="title">【検索結果一覧】</h1>
+<div class="main">
+  <div class="sidebar">
+    <%= render "suggestions/sidebar" %>
+  </div>
 
-<%= link_to "エクセル", search_suggestions_path(@suggestions, format: :xlsx) %>
-
-<div class="suggestions-field">
-  <% if @suggestions.length > 0 %>
-    <%= render partial: "suggestions/suggestion", collection: @suggestions %>
-    <% if @suggestions.length % 3 == 1 %>
-      <div class="dummy-suggestion"></div>
-      <div class="dummy-suggestion"></div>
-    <% elsif @suggestions.length % 3 == 2 %>
-      <div class="dummy-suggestion" ></div>
-    <% end %>
-  <%else%>
-    <div class="search-result">
-      <span class="none-items">検索に該当するものはありません</span> <br>
-      <ul>
-        <li> ワ ー ド　：　<%= params[:keyword] %>
-        <li> 時　　期　：　<%= params[:filter_start_date] %>　〜　<%= params[:filter_end_date] %>
-        <li> 部　　署　：　<%= Department.find(params[:filter_department]).name %>
-        <li> 場　　所　：　<%= Location.find(params[:filter_location]).name %>
-        <li> 点　　数　：　<%= params[:filter_score] %>
-        <li> 最終評価　：　<%= ResultList.find(params[:filter_result]).name %>
-      </ul>
+  <div class="search-result">
+    <div class="suggestions-field">
+      <h2 class="title">【検索結果一覧】</h2>
+      <span>(<%=@suggestions.length%>件見つかりました)</span>
+      <% if @suggestions.length > 0 %>
+        <%= render partial: "suggestions/suggestion", collection: @suggestions %>
+        <% if @suggestions.length % 3 == 1 %>
+          <div class="dummy-suggestion"></div>
+          <div class="dummy-suggestion"></div>
+        <% elsif @suggestions.length % 3 == 2 %>
+          <div class="dummy-suggestion" ></div>
+        <% end %>
+      <%else%>
+        <div class="search-result">
+          <span class="none-items">検索に該当するものはありません</span> <br>
+          <ul>
+            <li> 検索文字　：　<%= params[:keyword] %>
+            <li> 時　　期　：　<%= params[:filter_start_date] %>　〜　<%= params[:filter_end_date] %>
+            <li> 部　　署　：　<%= Department.find(params[:filter_department]).name %>
+            <li> 場　　所　：　<%= Location.find(params[:filter_location]).name %>
+            <li> 点　　数　：　<%= params[:filter_score] %>
+            <li> 最終評価　：　<%= ResultList.find(params[:filter_result]).name %>
+          </ul>
+        </div>
+      <%end%>
     </div>
-  <%end%>
+  </div>
 </div>

@@ -4,6 +4,12 @@
 <h3 class="sidebar-menu-title">【リンク先】</h3>
 <ul class="sidebar-contents">
 
+  <% unless @url == root_path %>
+    <li class="sidebar-link-content">
+      <%= link_to 'トップページ', root_path, method: :get %>
+    </li>
+  <% end %>
+
   <% unless @url == new_suggestion_path %>
     <li class="sidebar-link-content">
       <%= link_to '投稿ページ', new_suggestion_path, method: :get %>

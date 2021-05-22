@@ -1,9 +1,16 @@
 <%= render "shared/header" %>
 
-<%= render "suggestions/suggestion_prev_next" %>
 
-<div class="show-suggestion">
-  <div class="background-mask">
+
+<div class="main">
+  <div class="sidebar">
+    <%= render "suggestions/sidebar" %>
+  </div>
+
+  <div class="show-suggestion">
+
+    <%= render "suggestions/suggestion_prev_next" %>
+
     <%= render "suggestions/show_suggestion" %>
     <div class="link">
       <% if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
@@ -14,19 +21,19 @@
         <%= link_to "評価ページへ", new_suggestion_evaluation_path(params[:id]), class:"link-btn-show-to-evaluation" %>
       <% end %>
     </div>
+
+    <%# 評価部分 %>
+    <% unless @suggestion.evaluation == nil %>
+      <%= render "suggestions/show_evaluation" %>
+
+    <%# 最終評価部分 %>
+      <% unless @suggestion.evaluation.result == nil %>
+        <%= render "suggestions/show_result" %>
+      <% end %>
+    <% end %>
+
+    <%= render "suggestions/suggestion_prev_next" %>
+
   </div>
+
 </div>
-
-<%# 評価ページ %>
-<% unless @suggestion.evaluation == nil %>
-  <%= render "suggestions/show_evaluation" %>
-
-<%# 最終評価ページ %>
-  <% unless @suggestion.evaluation.result == nil %>
-    <%= render "suggestions/show_result" %>
-  <% end %>
-<% end %>
-
-<%= render "suggestions/suggestion_prev_next" %>
-
-<%= render "shared/footer" %>

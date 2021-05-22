@@ -1,9 +1,11 @@
 
 <%= render "shared/evaluation_header" %>
 
-
 <div class="evaluation-main">
-  <%= render "evaluations/evaluation_sidebar" %>
+  <div class="sidebar">
+    <%= render "suggestions/sidebar" %>
+    <%= render "evaluations/evaluation_sidebar" %>
+  </div>
   <div class="none-evaluation-items">
     <p>評価対象を選択して下さい</p>
   </div>

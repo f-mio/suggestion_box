@@ -1,5 +1,6 @@
 class SuggestionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_url
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
   before_action :set_relations, only: [:index, :edit, :show]
   before_action :validate_suggestion_state, only: [:edit, :update, :destroy]
@@ -58,6 +59,10 @@ class SuggestionsController < ApplicationController
 
 
   private
+
+  def set_url
+    @url = request.fullpath
+  end
 
   def set_relations
     @relations = UserDepartmentsRelation.where("user_id = #{current_user.id} AND is_manager = True")
@@ -159,4 +164,5 @@ class SuggestionsController < ApplicationController
     end
     return condition
   end
+
 end

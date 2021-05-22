@@ -1,0 +1,59 @@
+// sidebarのcss
+
+h2.sidebar-user-name{
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  margin: 15px 0 25px 0;
+}
+
+h2.sidebar-user-name:after {
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 45%);
+  width: 90%;
+  height: 2px;
+  content: '';
+  border-radius: 5px;
+  background: #000;
+}
+
+// サイドバーの項目
+h3.sidebar-menu-title{
+  width: 100%;
+  font-size: 18px;
+  background-color: #CAFFBF;
+}
+
+ul.sidebar-contents{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+ul.sidebar-contents li{
+  margin: 2px 0;
+}
+
+ul.sidebar-contents li.sidebar-link-content:hover{
+//  background-color: aqua;
+  background-color: #9BF6FF;
+  opacity: 0.6;
+}
+
+ul.sidebar-contents li.sidebar-user-content:hover{
+  background-color: #FFADAD;
+  opacity: 0.6;
+}
+
+ul.sidebar-contents li.sidebar-export-all-to-excel:hover{
+  background-color: #BDB2FF;
+  opacity: 0.6;
+}
+
+ul.sidebar-contents li a{
+  text-decoration: none;
+  color: black;
+  text-decoration: none;
+  margin-left: 20px;
+}

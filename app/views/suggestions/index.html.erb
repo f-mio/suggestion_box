@@ -1,6 +1,9 @@
 <%= render "shared/header" %>
 
 <div class="main">
+  <div class="sidebar">
+    <%= render "suggestions/sidebar" %>
+  </div>
   <div class="suggestions-field">
     <% @suggestions.each do |suggestion| %>
       <div class="suggestion">
@@ -56,13 +59,3 @@
   </div>
 </div>
 
-<%= link_to(new_suggestion_path, class: 'suggestion-btn') do %>
-  <span class='suggestion-btn-text'>提案する</span>
-  <%= image_tag 'comment.png', size: '60x90', class: "suggestion-btn-icon" %>
-<% end %>
-
-<div class="output">
-  <%= link_to "エクセルへの全件エクスポート", suggestions_path(@suggestion, format: :xlsx) ,class:"export-all-to-excel" %>
-</div>
-
-<%= render "shared/footer" %>

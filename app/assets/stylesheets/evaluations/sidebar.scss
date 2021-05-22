@@ -1,0 +1,36 @@
+// サイドバー部分
+
+div.sidebar a{
+  text-decoration: none;
+}
+
+div.unevaluated-label{
+  width: 100%;
+  font-size: 18px;
+  background-color: #A0C4FF;
+}
+
+div.unevaluated-label span{
+  color: black;
+  font-size: 20px;
+}
+
+div.unevaluated{
+  margin: 5px 15px;
+  border: groove 5px azure;
+}
+
+div.unevaluated-and-selected{
+  margin: 5px 15px;
+  border: groove 5px skyblue;
+  background-color: #A0C4FF;
+  text-overflow: ellipsis;
+}
+
+div.unevaluated ul li{
+  text-decoration: none;
+}
+
+div.unevaluated ul li.title{
+  color: blue;
+}

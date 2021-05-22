@@ -1,64 +1,11 @@
 .result-header{
   width: 100vw;
   height: 20vh;
-  background-image: image-url('suggestionbox_evaluation_header.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:  center;
+  background: linear-gradient(175deg, #FFD6A5, #FFFFFF 65%);
   display: flex;
   flex-direction: row;
 }
 
-div.result-header div.left-header a.header-title{
-  color: beige;
-  font-size: 48px;
-  text-align: center;
-  margin-top: 15px;
-  text-decoration: none;
-}
-
-div.result-header div.left-header div.user-info-field{
-  font-size: 18px;
-  color:  aliceblue;
-  font-weight: 400;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 6px;
-  align-items: center;
-}
-
-div.result-header div.left-header div.user-info-field div.more span.menu{
-  color: white;
-  background-color: salmon;
-  opacity: 0.9;
-  padding: 7px 15px;
-  border-radius: 20%;
-  font-weight: 500;
-}
-
-
-div.result-header div.left-header div.user-info-field div.more ul.more_list{
-  display: none;
-}
-
-div.result-header div.left-header div.user-info-field div.more:hover ul.more_list{
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  position: absolute;
-}
-
-div.result-header div.left-header div.user-info-field div.more ul.more_list li{
-  color: aliceblue;
-  font-size: 18px;
-  text-decoration: none;
-  padding: 3px 10px;
-  background-color: whitesmoke;
-  border: solid 0.5px black;
-  border-radius: 7%;
-  margin-left: 7px;
-}
 
 // 右側のヘッダー
 
@@ -70,9 +17,8 @@ div.result-header div.right-header{
 
 div.result-header div.right-header p.result-page-title{
   font-size: 40px;
-  color: aliceblue;
-  background-color: black;
   opacity: 0.7;
   padding: 5px 10px;
   margin-left: 10%;
+  text-shadow: 2px 2px 1px gray;
 }

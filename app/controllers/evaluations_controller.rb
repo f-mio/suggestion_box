@@ -1,5 +1,6 @@
 class EvaluationsController < ApplicationController
   before_action :validate_users
+  before_action :set_url
   before_action :set_suggestions
   before_action :set_suggestion, only: [:new, :create, :edit, :destroy]
   before_action :set_evaluation, only: [:edit, :update, :destroy]
@@ -46,6 +47,10 @@ class EvaluationsController < ApplicationController
     params.require(:evaluation).permit(
       :comment, :evaluation_score
     ).merge(user_id: current_user.id, suggestion_id: params[:suggestion_id])
+  end
+
+  def set_url
+    @url = request.fullpath
   end
 
   def validate_users

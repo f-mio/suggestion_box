@@ -2,7 +2,10 @@
 
 <div class="evaluation-main">
   <%# サイドバー %>
-  <%= render "evaluations/evaluation_sidebar" %>
+  <div class="sidebar">
+    <%= render "suggestions/sidebar" %>
+    <%= render "evaluations/evaluation_sidebar" %>
+  </div>
 
   <%# メイン部分 %>
   <div class="evaluation-area">

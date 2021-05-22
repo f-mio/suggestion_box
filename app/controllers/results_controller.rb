@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
   before_action :validate_user
+  before_action :set_url
   before_action :set_suggestions
   before_action :set_suggestion, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_result, only: [:edit, :update, :destroy]
@@ -40,6 +41,10 @@ class ResultsController < ApplicationController
 
   private
 
+  def set_url
+    @url = request.fullpath
+  end
+
   def validate_user
     ### 親部署の一覧を取得　→　該当ユーザが管理者かつ親部署に所属していることをrelationから調査する。
 
@@ -53,7 +58,7 @@ class ResultsController < ApplicationController
     sql = [sql, {department_ids: parent_ids}]
 
     relations = UserDepartmentsRelation.find_by_sql(sql)
-    unless relations.length > 0
+    unless relations.length > 0 || current_user.id == 1
       redirect_to root_path
     end
   end

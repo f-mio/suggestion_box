@@ -49,9 +49,11 @@
 #   {id: 2, name: "他部門への情報共有"},
 #   {id: 3, name: "審査会対象"},
 # ])
-
 User.create([
-  {id: 1, email: "root_user@abcd.co.jp", password: "aaaaaa11", password_confirmation: "aaaaaa11", family_name: "root", first_name:"userさん", corporate_no:"abcd2039000"},
+#  {id: 1, email: "root_user@abcd.co.jp", password: "aaaaaa11", password_confirmation: "aaaaaa11", family_name: "root", first_name:"userさん", corporate_no:"abcd2039000"},
 #  {id: 3, email: "abcd2021001@abcd.co.jp", password: "aaaaaa11", password_confirmation: "aaaaaa11", family_name: "root", first_name:"userさん", corporate_no:"abcd2021001"},
 #  {id: 5, email: "abcd1981001@abcd.co.jp", password: "aaaaaa11", password_confirmation: "aaaaaa11", family_name: "root", first_name:"userさん", corporate_no:"abcd1981001"},
+  {id: 6, email: "abcd1982001@abcd.co.jp", password: "aaaaaa11", password_confirmation: "aaaaaa11", family_name: "α工場製造", first_name:"製造部長", corporate_no:"abcd1982001"},
+  {id: 7, email: "abcd1983001@abcd.co.jp", password: "aaaaaa11", password_confirmation: "aaaaaa11", family_name: "AA製造課", first_name:"課長", corporate_no:"abcd1983001"},
+  {id: 8, email: "abcd1984001@abcd.co.jp", password: "aaaaaa11", password_confirmation: "aaaaaa11", family_name: "BB製造課", first_name:"課長", corporate_no:"abcd1984001"},
 ])

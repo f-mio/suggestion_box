@@ -1,52 +1,24 @@
 /* This css is used by new and edit action. */
 
 
-.new-suggestion{
+div.new-suggestion{
+  width: 82vw;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-//  background-image: image-url("suggestions_new_background_image.jpg");
-//  background-position: center;
-//  background-size: cover;
-//  background-repeat: no-repeat;
   font-weight: 500;
+  overflow: auto;
+  background-color: rgba(#9BF6FF, 0.7);
 }
 
-.background-mask{
-  background: RGB(255,255,255,0.35);
+div.main div.new-suggestion span.title{
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0;
 }
 
-.new-suggestion-top{
-  display: flex;
-  padding-top: 10px;
-}
-
-.new-suggestion-top-left{
-  width: 70%;
-  height: 250px;
-  padding: 10px 20px;
-}
-
-.suggestion-input-form{
-  width: 350px;
-  height: 30px;
-  margin-bottom: 20px;
-}
-
-.suggestion-input-target{
-  width: 30%;
-  height: 30px;
-}
-
-.new-suggestion-top-right{
-  width: 30%;
-  height: 250px;
-  padding: 15px 10px;
-}
-
-.suggestion-map{
-  width: 150px;
-}
-
+// 【必須】という強調文字を表示するのに使用
 .indispensable{
   background: #ea352d;
   margin-left: 2px;
@@ -57,15 +29,74 @@
   font-weight: 600;
 }
 
+// タイトル、カテゴリー、改善箇所の入力フィールド
+.new-suggestion-top{
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 2%;
+}
+
+.new-suggestion-top-left{
+  width: 50%;
+//  height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.new-suggestion-top-right{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+
+div.main div.new-suggestion div.new-suggestion-top p.input-label{
+  margin-top: 10px;
+}
+
+.suggestion-input-form{
+  width: 350px;
+  height: 30px;
+  margin-top: 2px;
+}
+
+.suggestion-select-form{
+  width: 354px;
+  height: 35px;
+  margin-top: 2px;
+}
+
+
+/*
+.suggestion-map{
+  width: 150px;
+}
+*/
+
+// 問題点、あるべき姿を記載する箇所
 .new-suggestion-explanation-area{
   display: flex;
   justify-content: space-around;
-  margin: 0 20px; 
+  margin: 20px 20px 0 20px;
 }
 
-.new-suggestion-explanation{
+.new-suggestion-issue{
   width: 45%;
+  background-color: #FFADAD;
+  padding: 10px 0 10px 2%;
 }
+
+.new-suggestion-ideal{
+  width: 45%;
+  background-color: #A0C4FF;
+  padding: 10px 0 10px 2%;
+}
+
 
 .suggestion-explanation-box{
   margin-top: 10px;
@@ -92,33 +123,35 @@
 }
 
 .attached-image{
-  width: 40vW;
+  width: 90%;
 }
 
 .new-suggestion-effect{
-  margin: 20px 30px;
+  width: 92%;
+  margin: 20px 0 0 3%;
+  padding: 10px 0 10px 2%;
 }
 
 .suggestion-submit{
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
+  margin-top: 40px;
 }
 
 .submit-btn{
   width: 170px;
   height: 40px;
   font-size: 25px;
-  background-color: skyblue;
+  background-color: #9BF6FF;
   border: solid 2px slategrey;
   border-radius: 10px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  align-self: center;
+  text-align: center;
 }
 
 .submit-btn:hover{
-  opacity: 0.7;
   color: antiquewhite;
   background-color: blue;
 }

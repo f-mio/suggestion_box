@@ -1,37 +1,10 @@
 <div class="result-header">
   <div class="left-header">
     <%= link_to "Suggestions Box", root_path, class:"header-title"%>
-    <% if user_signed_in? %>
-      <div class="user-info-field">
-        <div>
-          ようこそ、<%= (current_user.family_name + " " + current_user.first_name) %>さん
-        </div>
-        <div class="more">
-          <span class="menu">メニュー</span>
-          <ul class="more_list">
-            <li><%= link_to 'メインページ', root_path, method: :get %></li>
-            <% if UserDepartmentsRelation.where(
-                    "is_manager = true AND user_id = :user_id",
-                    {user_id: current_user.id}).length > 0 || current_user.id ==1 %>
-              <li><%= link_to '評価ページ', evaluations_path, method: :get %></li>
-            <%end%>
-            <% if current_user.id == 1 %>
-              <li><%= link_to '部署情報編集ページ', user_departments_relations_path, method: :get %></li>
-            <%end%>
-            <li><%= link_to 'ユーザ登録編集', edit_user_registration_path, method: :get %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </div>
-      </div>
-    <%else%>
-      <div class="sign-in-out-btn">
-        <%= link_to "ログイン", new_user_session_path %>
-      </div>
-    <% end %>
   </div>
   <div class="right-header">
     <p class="result-page-title">
-      〜　最終評価ページ　〜
+      〜 最終評価ページ 〜
     </p>
     <p class="result-department">
     </p>

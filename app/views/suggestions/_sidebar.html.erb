@@ -1,0 +1,66 @@
+<h2 class="sidebar-user-name">
+  <%= (current_user.family_name + " " + current_user.first_name + "さん") %>
+</h2>
+<h3 class="sidebar-menu-title">【リンク先】</h3>
+<ul class="sidebar-contents">
+
+  <% unless @url == root_path %>
+    <li class="sidebar-link-content">
+      <%= link_to 'トップページ', root_path, method: :get %>
+    </li>
+  <% end %>
+
+  <% unless @url == new_suggestion_path %>
+    <li class="sidebar-link-content">
+      <%= link_to '投稿ページ', new_suggestion_path, method: :get %>
+    </li>
+  <% end %>
+
+  <% if UserDepartmentsRelation.where(
+        "is_manager = true AND user_id = :user_id AND department_id IN (:department) ",
+            {user_id: current_user.id, department: (Department.pluck(:parent_id).uniq)}).length > 0 ||
+              current_user.id == 1 %>
+    <% unless @url == evaluations_path %>
+      <li class="sidebar-link-content">
+        <%= link_to '評価ページ', evaluations_path, method: :get, class:"sidebar-link-content" %>
+      </li>
+    <% end %>
+
+    <% unless @url == results_path %>
+      <li class="sidebar-link-content">
+        <%= link_to '最終評価ページ', results_path, method: :get, class:"sidebar-link-content" %>
+      </li>
+    <% end %>
+
+  <% elsif @url != evaluations_path &&
+            ( UserDepartmentsRelation.where(
+              "is_manager = true AND user_id = :user_id",
+             {user_id: current_user.id}).length > 0 || current_user.id ==1 ) %>
+    <li class="sidebar-link-content">
+      <%= link_to '評価ページ', evaluations_path, method: :get, class:"sidebar-link-content" %>
+    </li>
+  <%end%>
+</ul>
+
+<h3 class="sidebar-menu-title">【アカウント】</h3>
+<ul class="sidebar-contents">
+  <% if current_user.id == 1 %>
+    <li class="sidebar-user-content">
+      <%= link_to '部署情報編集ページ', user_departments_relations_path, method: :get, class:"sidebar-link-content" %>
+    </li>
+  <%end%>
+  <li class="sidebar-user-content">
+    <%= link_to 'ユーザ登録編集', edit_user_registration_path, method: :get%>
+  </li>
+  <li class="sidebar-user-content">
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"sidebar-user-content" %>
+  </li>
+</ul>
+
+<% if @url == root_path %>
+  <h3 class="sidebar-menu-title">【結果出力】</h3>
+  <ul class="sidebar-contents">
+    <li class="sidebar-export-all-to-excel"><%= link_to "エクセル出力", suggestions_path(@suggestion, format: :xlsx) %></li>
+  </ul>
+<% end %>
+

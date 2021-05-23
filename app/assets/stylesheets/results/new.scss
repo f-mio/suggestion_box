@@ -2,21 +2,24 @@
 div.result-main div.result-area{
   width:  82vw;
   height: calc(100vh - 20vh);
+  display: flex;
+  flex-direction: column;
 }
 
-div.result-main div.result-area div.show-suggestion{
+div.result-main div.result-area div.show-suggestion-and-evaluation{
   height: 55vh;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 // 評価部分のcssは、suggestions/show.scssのものを使用する
 
 
 // 最終審査のインプット部分
-
 div.result-form{
   height: 25vh;
-  background-color: palegoldenrod;
+  background-color: rgba(#FFD6A5, 0.7);
   border: solid 1px gray;
   display: flex;
   flex-direction: column;
@@ -31,7 +34,7 @@ div.result-form p.result-input-title{
   margin: 5px 0 10px 10%;
   padding: 5px;
   border: double 1px black;
-  background-color: goldenrod;
+  background-color: #FFD6A5;
   text-align: center;
 }
 

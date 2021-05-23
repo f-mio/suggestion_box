@@ -1,32 +1,41 @@
 <%= render "shared/header" %>
 
-<%= render "suggestions/suggestion_prev_next" %>
-
-<div class="show-suggestion">
-  <div class="background-mask">
-    <%= render "suggestions/show_suggestion" %>
-    <div class="link">
-      <% if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
-        <%= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
-        <%= link_to "削除", suggestion_path(params[:id]), method: :delete, class:"destroy-btn" %>
-      <% end %>
-      <% if (@suggestion.evaluation == nil && @relations.where("department_id = #{@suggestion.department.id}" ).length > 0) %>
-        <%= link_to "評価ページへ", new_suggestion_evaluation_path(params[:id]), class:"link-btn-show-to-evaluation" %>
-      <% end %>
-    </div>
+<div class="main">
+  <div class="sidebar">
+    <%= render "suggestions/sidebar" %>
   </div>
+
+  <div class="show-suggestion">
+
+    <%= render "suggestions/suggestion_prev_next" %>
+
+    <%# 提案部分 %>
+    <div class="show-only-suggestion">
+      <%= render "suggestions/show_suggestion" %>
+
+      <div class="link">
+        <% if @suggestion.writable==true && current_user.id == @suggestion.user_id %>
+          <%= link_to "修正ページへ移動", edit_suggestion_path(params[:id]), class:"link-btn-show-to-edit" %>
+          <%= link_to "削除", suggestion_path(params[:id]), method: :delete, class:"destroy-btn" %>
+        <% end %>
+        <% if (@suggestion.evaluation == nil && @relations.where("department_id = #{@suggestion.department.id}" ).length > 0) %>
+          <%= link_to "評価ページへ", new_suggestion_evaluation_path(params[:id]), class:"link-btn-show-to-evaluation" %>
+        <% end %>
+      </div>
+    </div>
+
+    <%# 評価部分 %>
+    <% unless @suggestion.evaluation == nil %>
+      <%= render "suggestions/show_evaluation" %>
+
+    <%# 最終評価部分 %>
+      <% unless @suggestion.evaluation.result == nil %>
+        <%= render "suggestions/show_result" %>
+      <% end %>
+    <% end %>
+
+    <%= render "suggestions/suggestion_prev_next" %>
+
+  </div>
+
 </div>
-
-<%# 評価ページ %>
-<% unless @suggestion.evaluation == nil %>
-  <%= render "suggestions/show_evaluation" %>
-
-<%# 最終評価ページ %>
-  <% unless @suggestion.evaluation.result == nil %>
-    <%= render "suggestions/show_result" %>
-  <% end %>
-<% end %>
-
-<%= render "suggestions/suggestion_prev_next" %>
-
-<%= render "shared/footer" %>

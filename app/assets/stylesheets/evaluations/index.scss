@@ -3,48 +3,6 @@ div.evaluation-main{
   flex-direction: row;
 }
 
-// サイドバー部分
-div.evaluation-sidebar{
-  width: 18vw;
-  height: calc(100vh - 20vh);
-  background-color: aquamarine;
-  overflow: auto;
-}
-
-div.unevaluated-label{
-  padding: 20px 20px 10px 0;
-  text-align: center;
-}
-
-div.unevaluated-label span{
-  color: black;
-  font-size: 20px;
-}
-
-div.evaluation-sidebar a{
-  text-decoration: none;
-}
-
-div.evaluation-sidebar div.unevaluated{
-  margin: 5px 15px;
-  border: groove 5px azure;
-}
-
-div.evaluation-sidebar div.unevaluated-and-selected{
-  margin: 5px 15px;
-  border: groove 5px red;
-  background-color: whitesmoke;
-  text-overflow: ellipsis;
-}
-
-div.evaluation-sidebar div.unevaluated ul li{
-  text-decoration: none;
-}
-
-div.evaluation-sidebar div.unevaluated ul li.title{
-  color: blue;
-}
-
 
 // メインの提案と評価部分
 div.evaluation-main div.evaluation-area{

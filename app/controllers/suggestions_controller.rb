@@ -1,5 +1,6 @@
 class SuggestionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_url
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
   before_action :set_relations, only: [:index, :edit, :show]
   before_action :validate_suggestion_state, only: [:edit, :update, :destroy]
@@ -7,6 +8,14 @@ class SuggestionsController < ApplicationController
 
   def index
     @suggestions = Suggestion.all.order(created_at: "DESC")
+
+    # エクセルシートのエクスポート機能
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="suggestion一覧.xlsx"'
+      }
+    end
   end
 
   def new
@@ -45,10 +54,15 @@ class SuggestionsController < ApplicationController
   def search
     condition, filter_hash = set_condition
     @suggestions = Suggestion.where(condition, filter_hash).order(created_at: "DESC")
+
   end
 
 
   private
+
+  def set_url
+    @url = request.fullpath
+  end
 
   def set_relations
     @relations = UserDepartmentsRelation.where("user_id = #{current_user.id} AND is_manager = True")
@@ -81,39 +95,39 @@ class SuggestionsController < ApplicationController
   def set_condition
     condition = ""
     filter_hash = {}
-    unless params[:keyword]==""
+    if params[:keyword]!="" && params[:keyword]!=nil
       condition += "(issue LIKE :keyword OR issue LIKE :keyword OR effect LIKE :keyword)"
       filter_hash[:keyword] = '%' + params[:keyword] +'%'
     end
 
-    if params[:filter_start_date]!="" && params[:filter_end_date]!=""
+    if params[:filter_start_date]!="" && params[:filter_end_date]!="" && params[:filter_start_date]!=nil && params[:filter_end_date]!=nil
       condition = set_connection(condition)
       condition += "created_at BETWEEN :start_date AND :end_date"
       filter_hash[:start_date] = params[:filter_start_date]
       filter_hash[:end_date] = params[:filter_end_date].to_date+1
-    elsif params[:filter_start_date] != ""
+    elsif params[:filter_start_date]!="" && params[:filter_start_date]!=nil
       condition = set_connection(condition)
       condition += "created_at >= :start_date"
       filter_hash[:start_date] = params[:filter_start_date]
-    elsif params[:filter_end_date] != ""
+    elsif params[:filter_end_date]!="" && params[:filter_end_date]!=nil
       condition = set_connection(condition)
       condition += "created_at <= :end_date"
       filter_hash[:end_date] = params[:filter_end_date].to_date+1
     end
 
-    unless params[:filter_location]=="0"
+    if params[:filter_location]!="0" && params[:filter_location]!=nil
       condition = set_connection(condition)
       condition += "location_id = :filter_location"
       filter_hash[:filter_location] = params[:filter_location]
     end
 
-    unless params[:filter_department]=="0"
+    if params[:filter_department]!="0" && params[:filter_department]!=nil
       condition = set_connection(condition)
       condition += "department_id = :filter_department"
       filter_hash[:filter_department] = params[:filter_department]
     end
 
-    unless params[:filter_score]=="0"
+    if params[:filter_score]!="0" && params[:filter_score]!=nil
       condition = set_connection(condition)
       if params[:filter_score]=="1"
         condition += "NOT EXISTS  (SELECT evaluations.* FROM evaluations"
@@ -126,7 +140,7 @@ class SuggestionsController < ApplicationController
       end
     end
 
-    unless params[:filter_result] == "0"
+    if params[:filter_result]!="0" && params[:filter_result]!=nil
       condition = set_connection(condition)
       if params[:filter_result]=="99"
         condition += "NOT EXISTS (SELECT results.id FROM evaluations"
@@ -150,4 +164,5 @@ class SuggestionsController < ApplicationController
     end
     return condition
   end
+
 end

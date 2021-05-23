@@ -3,13 +3,21 @@
 
 
 <div class="result-main">
-  <%= render "results/result_sidebar" %>
-
+  <div class="sidebar">
+    <%= render "suggestions/sidebar"%>
+    <%= render "results/result_sidebar" %>
+  </div>
   <div class="result-area">
-    <div class="show-suggestion">
-      <%= render "suggestions/show_suggestion" %>
+    <div class="show-suggestion-and-evaluation">
+      <div class="show-only-suggestion">
+        <%= render "suggestions/show_suggestion" %>
+      </div>
       <%= render "suggestions/show_evaluation" %>
     </div>
+
     <%= render "results/result_input"%>
+
   </div>
+
+
 </div>

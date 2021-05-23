@@ -5,6 +5,13 @@ div.show-suggestion {
   width: 82vw;
   height: calc(100vh - 20vh);
   overflow: auto;
+//  background-color: rgba(black, 0.2);
+}
+
+div.show-only-suggestion{
+  width: 96%;
+  margin: 0 2%;
+  background-color: rgba(#9BF6FF, 0.7);
 }
 
 // _suggestion.html.erbでのcss
@@ -21,7 +28,7 @@ div.show-title-and-suggestion-info div.show-title{
   margin-left: 7%;
 }
 
-div.show-title-and-suggestion-info div.show-suggestion-info{
+div.show-suggestion-info{
   width: 25vw;
   display: flex;
   flex-direction: column;
@@ -29,13 +36,13 @@ div.show-title-and-suggestion-info div.show-suggestion-info{
   margin-right: 10vw;
 }
 
-div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents{
+div.show-suggestion-info div.show-suggestion-info-contents{
   display: flex;
   flex-direction: row;
   font-weight: 500;
 }
 
-div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents p.show-suggestion-info-title{
+div.show-suggestion-info div.show-suggestion-info-contents p.show-suggestion-info-title{
   width: 30%;
   text-align: center;
   border: solid 1px black;
@@ -43,7 +50,7 @@ div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-
   background-color: rgba($color: whitesmoke, $alpha: 0.7);
 }
 
-div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-info-contents p.show-suggestion-info-content{
+div.show-suggestion-info div.show-suggestion-info-contents p.show-suggestion-info-content{
   width: 70%;
   text-align: start;
   border: solid 1px black;
@@ -52,19 +59,21 @@ div.show-title-and-suggestion-info div.show-suggestion-info div.show-suggestion-
 }
 
 div.show-target-info-and-map{
+  width: 96%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin: 30px 7vw 0 7vw;
-  background-color: #CAFFBF;
+  justify-content: flex-start;
+  margin: 20px 2% 0 2%;
 }
 
+/*
 div.show-target-info-and-map div.show-target-map{
   width: 50%;
   margin: 10px 3% 0 3%;
   // 仮↓
-//  height: 300px;
+  height: 300px;
 }
+*/
 
 div.show-target-info-and-map div.show-target-info{
   width: 35%;
@@ -110,39 +119,37 @@ div.show-issue-and-ideal{
 }
 
 div.show-issue-and-ideal div.show-issue{
-  width: 40vw;
-  margin: 20px 3vw 0 7vw;
+  width: 46%;
+  margin: 20px 2% 0 2%;
   display: flex;
   flex-direction: column;
   background-color: #FFADAD;
-  align-items: center;
+  align-items: flex-start;
 }
 
 div.show-issue-and-ideal div.show-ideal{
-  width: 40vw;
-  margin: 20px 7vw 0 3vw;
+  width: 46%;
+  margin: 20px 2% 0 2%;
   display: flex;
   flex-direction: column;
   background-color: #A0C4FF;
-  align-items: center;
+  align-items: flex-start;
 }
 
 div.show-issue-and-ideal div.show-issue div.show-issue-comment{
-  width: 90%;
+  width: 92%;
   height: 150px;
   border: solid 1px white;
-  padding: 5px 10px;
-  margin: 5px 0 10px 0;
+  margin: 5px 4% 10px 4%;
   text-align: start;
   background-color: rgba(whitesmoke, 0.7);
 }
 
 div.show-issue-and-ideal div.show-ideal div.show-ideal-comment{
-  width: 90%;
+  width: 92%;
   height: 150px;
   border: solid 1px white;
-  padding: 5px 10px;
-  margin: 5px 0 10px 0;
+  margin: 5px 4% 10px 4%;
   text-align: start;
   background-color: rgba(whitesmoke, 0.7);
 }
@@ -153,38 +160,37 @@ div.show-issue-and-ideal div.show-ideal div.show-ideal-comment{
 }
 
 .show-issue-and-ideal-title{
+  width: 100%;
   margin-top: 5px;
   font-size: 18px;
   padding: 5px 0;
+  text-align: center;
 }
 
+
+// 効果部分
 div.show-effect{
-  margin-top: 20px;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-div.show-effect div.show-effect-field{
-  width: 85%;
+  width: 96%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #98F6FF;
+  align-items: flex-start;
+  margin: 20px 2% 0 2%;
+  padding-bottom: 20px;
 }
 
 div.show-effect p.show-effect-title{
+  width: 100%;
   font-size: 18px;
-  margin: 5px 0;
+  margin: 5px 2%;
+  text-align: center;
 }
 
 div.show-effect p.show-effect-comment{
-  margin: 3px 2% 10px 2%;
-  padding: 5px 10px;
   width: 96%;
   height: 120px;
   border: solid 1px white;
   background-color: rgba(whitesmoke, 0.7);
+  margin: 3px 2% 10px 2%;
 }
 
 
@@ -217,6 +223,7 @@ div.show-prev-next-link p.show-page-next-disable{
   text-decoration: none;
   margin: 5px 10%;
 }
+
 
 // 提案に対するリンクの部分
 div.main div.show-suggestion div.link{
@@ -271,7 +278,7 @@ div.show-evaluation-field{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 2%;
+  margin: 30px 2% 0 2%;
   padding: 10px 0;
 }
 
@@ -284,29 +291,31 @@ div.show-evaluation-field h2.title{
 }
 
 div.show-evaluation-field div.show-evaluation-comment-and-score{
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  margin: 10px 3%;
+  justify-content: flex-start;
+  margin: 10px 2%;
 }
 
 div.show-evaluation-field div.show-evaluation-comment-and-score p.show-evaluation-comment-form{
-  width: 70%;
+  width: 75%;
   height: 120px;
-  margin-left: 3%;
   border: solid 1px white;
   background-color: rgba(whitesmoke, 0.7);
   padding: 5px 10px;
 }
 
+div.show-evaluation-field div.show-evaluation-comment-and-score div{
+  width: 25%;
+}
+
 div.show-evaluation-field div.show-evaluation-comment-and-score p.show-evaluation-score-form{
-  width: 50px;
-  margin-right: 10%;
+  width: 100px;
   border: solid 1px white;
   background-color: rgba(whitesmoke, 0.7);
   padding: 5px 10px;
+  margin-left: 20%;
   text-align: center;
 }
 
@@ -353,6 +362,13 @@ div.show-evaluation-field a.link-btn-show-to-result{
   text-align: center;
 }
 
+span.evaluator{
+  padding: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: 20%;
+}
+
 
 // 最終評価結果
 div.show-result-field{
@@ -361,7 +377,7 @@ div.show-result-field{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 2%;
+  margin: 30px 2%;
   padding: 10px 0;
 }
 
@@ -374,30 +390,33 @@ div.show-result-field h2.title{
 }
 
 div.show-result-field div.show-result-list-and-comment{
-  width: 100%;
+  width: 96%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  margin: 10px 3%;
+  justify-content: flex-start;
+  margin: 10px 2%;
 }
 
 div.show-result-field div.show-result-list-and-comment p.show-result-comment{
-  width: 70%;
+  width: 75%;
   height: 120px;
-  margin-left: 3%;
   border: solid 1px white;
   background-color: rgba(whitesmoke, 0.7);
-  padding: 5px 10px;
+}
+
+div.show-result-field div.show-result-list-and-comment div{
+  width: 25%;
 }
 
 div.show-result-field div.show-result-list-and-comment p.show-result-list{
-  width: 180px;
-  margin-right: 10%;
   border: solid 1px white;
   background-color: rgba(whitesmoke, 0.7);
   padding: 5px 10px;
+  margin-left: 20%;
   text-align: center;
+
+
+
 }
 
 div.link{

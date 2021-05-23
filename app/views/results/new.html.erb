@@ -8,10 +8,16 @@
     <%= render "results/result_sidebar" %>
   </div>
   <div class="result-area">
-    <div class="show-suggestion">
-      <%= render "suggestions/show_suggestion" %>
+    <div class="show-suggestion-and-evaluation">
+      <div class="show-only-suggestion">
+        <%= render "suggestions/show_suggestion" %>
+      </div>
       <%= render "suggestions/show_evaluation" %>
     </div>
-    <%= render "results/result_input"%>
+
+  <%= render "results/result_input"%>
+
   </div>
+
+
 </div>

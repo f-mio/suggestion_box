@@ -13,8 +13,8 @@
       </p>
       <p>
         <br>
-        ＜評価者＞ <br>
-        <%= ( @suggestion.evaluation.result.user.family_name + " " + @suggestion.evaluation.result.user.first_name ) %>さん
+        <span class="evaluator">【評価者】</span><br>
+        <span class="evaluator"><%= ( @suggestion.evaluation.result.user.family_name + " " + @suggestion.evaluation.result.user.first_name ) %>さん</span>
       </p>
     </div>
   </div>

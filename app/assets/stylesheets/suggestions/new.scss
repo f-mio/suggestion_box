@@ -132,6 +132,7 @@ div.main div.new-suggestion div.new-suggestion-top p.input-label{
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
+  margin-top: 40px;
 }
 
 .submit-btn{
@@ -144,7 +145,6 @@ div.main div.new-suggestion div.new-suggestion-top p.input-label{
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   text-align: center;
-  margin: 40px 0;
 }
 
 .submit-btn:hover{

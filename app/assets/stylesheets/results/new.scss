@@ -2,11 +2,15 @@
 div.result-main div.result-area{
   width:  82vw;
   height: calc(100vh - 20vh);
+  display: flex;
+  flex-direction: column;
 }
 
-div.result-main div.result-area div.show-suggestion{
+div.result-main div.result-area div.show-suggestion-and-evaluation{
   height: 55vh;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 // 評価部分のcssは、suggestions/show.scssのものを使用する

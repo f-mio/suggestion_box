@@ -56,5 +56,5 @@ User.create([
 #  {id: 6, email: "abcd1982001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "α工場製造", first_name:"製造部長", corporate_no:"abcd1982001"},
 #  {id: 7, email: "abcd1983001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "AA製造課", first_name:"課長", corporate_no:"abcd1983001"},
 #  {id: 8, email: "abcd1984001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "BB製造課", first_name:"課長", corporate_no:"abcd1984001"},
-  {id: 9, email: "abcd1981002@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "BB製造課", first_name:"課長補佐", corporate_no:"abcd1981002"},
+  {id: 10, email: "abcd1981002@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "BB製造課", first_name:"課長補佐", corporate_no:"abcd1981002"},
 ])

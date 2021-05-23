@@ -7,9 +7,9 @@
   </div>
 
   <div class="search-result">
+    <h2 class="title">【検索結果一覧】</h2>
+    <span>(<%=@suggestions.length%>件見つかりました)</span>
     <div class="suggestions-field">
-      <h2 class="title">【検索結果一覧】</h2>
-      <span>(<%=@suggestions.length%>件見つかりました)</span>
       <% if @suggestions.length > 0 %>
         <%= render partial: "suggestions/suggestion", collection: @suggestions %>
         <% if @suggestions.length % 3 == 1 %>
@@ -26,7 +26,7 @@
             <li> 時　　期　：　<%= params[:filter_start_date] %>　〜　<%= params[:filter_end_date] %>
             <li> 部　　署　：　<%= Department.find(params[:filter_department]).name %>
             <li> 場　　所　：　<%= Location.find(params[:filter_location]).name %>
-            <li> 点　　数　：　<%= params[:filter_score] %>
+            <li> 点　　数　：　<%= params[:filter_score] %>点以上
             <li> 最終評価　：　<%= ResultList.find(params[:filter_result]).name %>
           </ul>
         </div>

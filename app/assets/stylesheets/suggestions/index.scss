@@ -33,6 +33,7 @@ div.suggestions-field{
 
 div.suggestion{
   width: calc((100% - 100px) / 3);
+  height: auto;
   background-color: rgba(#9BF6FF, 0.2);
   margin: 20px 0;
   border: solid 1px #9BF6FF;
@@ -43,6 +44,7 @@ div.suggestion{
 
 div.dummy-suggestion{
   width: calc((100% - 100px) / 3);
+  height: 100px;
   margin: 20px 0;
 }
 

@@ -13,7 +13,6 @@ class EvaluationsController < ApplicationController
   end
 
   def create
-    # Teamsへ通知を投げるようなものを入れる
     @evaluation = Evaluation.new(evaluation_params)
     if @evaluation.valid?
       Suggestion.update(@suggestion.id, writable: false)
@@ -87,12 +86,6 @@ class EvaluationsController < ApplicationController
 
   def set_evaluation
     @evaluation = Evaluation.find(params[:id])
-  end
-
-  def notification_to_teams
-  # createアクションの際に通知をteamsに投げる
-  # https://docs.microsoft.com/ja-jp/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors
-  # https://docs.microsoft.com/ja-jp/microsoftteams/platform/webhooks-and-connectors/how-to/add-outgoing-webhook
   end
 
 end

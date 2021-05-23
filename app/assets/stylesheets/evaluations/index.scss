@@ -3,28 +3,27 @@ div.evaluation-main{
   flex-direction: row;
 }
 
-
 // メインの提案と評価部分
-div.evaluation-main div.evaluation-area{
+.none-evaluation-area{
   width: 82vw;
   height: 80vh;
 }
 
-div.evaluation-main div.none-evaluation-items{
-  width: 82vw;
-  height: 80vh;
-  color: aliceblue;
-  align-self: center;
+div.none-evaluation-area div.none-evaluation-items{
+  width: 96%;
+  height: 96%;
   background-image: image-url("evaluations-index.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:  center;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2%;
 }
 
-div.evaluation-main div.none-evaluation-items p{
+div.none-evaluation-area div.none-evaluation-items p{
+  color: aliceblue;
   margin-left: 12%;
   font-size: 40px;
 }

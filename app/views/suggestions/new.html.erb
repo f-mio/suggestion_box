@@ -20,6 +20,8 @@
             <span class="indispensable">必須</span>
           </p>
           <%= f.collection_select :category_id, Category.all, :id, :name, {},{class:"suggestion-select-form", id:"suggestion-category"} %>
+        </div>
+        <div class="new-suggestion-top-right">
           <p class="input-label">
             ターゲット
             <span class="indispensable">必須</span>
@@ -27,9 +29,7 @@
           <%= f.collection_select :location_id, Location.all, :id, :name, {}, {class:"suggestion-select-form", id:"suggestion-location"}%>
           <%= f.collection_select :place_id, Place.all, :id, :name, {}, {class:"suggestion-select-form", id:"suggestion-place"} %>
           <%= f.text_field :target, class:"suggestion-input-form", id:"suggestion-target", placeholder:"改善箇所を記載してください (例：棚、装置)"%>
-        </div>
-        <div class="new-suggestion-top-right">
-          <div class="new-suggestion-map">dummy image</div>
+          <!--div class="new-suggestion-map">dummy image</div-->
         </div>
       </div>
       <div class="new-suggestion-explanation-area">

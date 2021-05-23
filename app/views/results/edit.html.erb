@@ -8,8 +8,10 @@
   </div>
 
   <div class="result-area">
-    <div class="show-suggestion">
-      <%= render "suggestions/show_suggestion" %>
+    <div class="show-suggestion-and-evaluation">
+      <div class="show-only-suggestion">
+        <%= render "suggestions/show_suggestion" %>
+      </div>
       <%= render "suggestions/show_evaluation" %>
     </div>
     <div class="result-form">

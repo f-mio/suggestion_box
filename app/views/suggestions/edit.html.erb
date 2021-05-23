@@ -1,6 +1,13 @@
 <%= render "shared/header"%>
-<div class="new-suggestion">
-  <div class="background-mask">
+
+
+<div class="main">
+  <div class="sidebar">
+    <%= render "suggestions/sidebar" %>
+  </div>
+
+  <div class="new-suggestion">
+    <span class="title">編集ページ</span>
     <%= form_with local: true, url:suggestion_path(@suggestion.id), model: @suggestion do |f| %>
       <div class="new-suggestion-top">
         <div class="new-suggestion-top-left">
@@ -14,20 +21,20 @@
             <span class="indispensable">必須</span>
           </p>
           <%= f.collection_select :category_id, Category.all, :id, :name, {},{class:"suggestion-input-form", id:"suggestion-category"} %>
+        </div>
+        <div class="new-suggestion-top-right">
           <p class="input-label">
             ターゲット
             <span class="indispensable">必須</span>
           </p>
-          <%= f.collection_select :location_id, Location.all, :id, :name, {}, {class:"suggestion-input-target", id:"suggestion-location"}%>
-          <%= f.collection_select :place_id, Place.all, :id, :name, {}, {class:"suggestion-input-target", id:"suggestion-place"} %>
-          <%= f.text_field :target, class:"suggestion-input-target", id:"suggestion-target"%>
-        </div>
-        <div class="new-suggestion-top-right">
-          <div class="new-suggestion-map">dummy image</div>
+          <%= f.collection_select :location_id, Location.all, :id, :name, {}, {class:"suggestion-select-form", id:"suggestion-location"}%>
+          <%= f.collection_select :place_id, Place.all, :id, :name, {}, {class:"suggestion-select-form", id:"suggestion-place"} %>
+          <%= f.text_field :target, class:"suggestion-input-form", id:"suggestion-target", placeholder:"改善箇所を記載してください (例：棚、装置)"%>
+          <!--div class="new-suggestion-map">dummy image</div-->
         </div>
       </div>
       <div class="new-suggestion-explanation-area">
-        <div class="new-suggestion-explanation">
+        <div class="new-suggestion-issue">
           <p class="input-label">
             ＜現状の問題点＞
             <span class="indispensable">必須</span>
@@ -40,7 +47,7 @@
             <% end %>
           </div>
         </div>
-        <div class="new-suggestion-explanation">
+        <div class="new-suggestion-ideal">
           <p class="input-label">
             ＜あるべき姿,理想＞
             <span class="indispensable">必須</span>
@@ -66,4 +73,4 @@
       </div>
     <% end %>
   </div>
-</div><%= render "shared/footer"%>
+</div>

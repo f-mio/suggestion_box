@@ -1,24 +1,31 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Suggestions Box　README
 
-Things you may want to cover:
+# 概要
+　企業でのボトムアップ活動である改善提案という仕組みをwebアプリ化いたしました。改善提案活動は、各従業員の考える問題点とあるべき姿を会社に提案し、身の回りを少しずつ良くしていくことを目的とした活動です。  
+　これをwebアプリ化することで、企業内の多くの人へよい提案の情報共有をすることができます。
 
-* Ruby version
+# URL
+https://suggestions-box.herokuapp.com/
 
-* System dependencies
+# 目指した課題解決
+　私の周りでは紙やエクセルファイルで運用されていることが多く、上司を除くとほとんどの改善提案は他の人の目に止まらないことが多いです。各提案が多くの人に共有されないことを問題と考え、このアプリを開発しました。
 
-* Configuration
+# テーブル構成
+　db/suggestion_box_ER.dioに記載しておりますので、そちらを参照ください。
 
-* Database creation
+# 利用方法
+　git cloneした後にアプリを立ち上げてください。
+　初期のデータを作成する際にdb/seed.rbにサンプルを置いてますので、こちらからデータ作成をしてください。
+% rails db:create  
+% rails db:migrate  
+% rails db:seed  
+　なお、ユーザIDが1のユーザは管理者ユーザになります。
+初期設定は、管理者ユーザでログインして、他のユーザの部署割り当てを行なってください。  
+　すべてのユーザは提案の提出と閲覧をすることができます。
+部署とユーザを指定した時にマッチするuser_departments_relationの.is_managerがtrueの場合、その部署の提案を評価することが可能です。このユーザは評価画面に遷移できます。  
+　一方、任意の部署には親部署(parent_id)が設定されております。その部署の上位の部署という意味で、この部署のis_managerがtrueになっているユーザが提案を最終評価することができます。
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 動作環境
+- Ruby 2.6.5
+- rails 6.0.0

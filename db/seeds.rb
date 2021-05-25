@@ -36,6 +36,7 @@ Location.create([
   {id:2, name: "A事業所"},
 ])
 Place.create([
+  {id:0, name: '---' ,   location_id: 0},
   {id:1, name: "本社1F", location_id: 1},
   {id:2, name: "本社2F", location_id: 1},
   {id:3, name: "本社3F", location_id: 1},
@@ -51,10 +52,14 @@ ResultList.create([
 ])
 User.create([
  {id: 1, email: "root_user@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "root", first_name:"userさん", corporate_no:"abcd2039000"},
- {id: 3, email: "abcd2021001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "root", first_name:"userさん", corporate_no:"abcd2021001"},
- {id: 5, email: "abcd1981001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "root", first_name:"userさん", corporate_no:"abcd1981001"},
+ {id: 2, email: "abcd2021001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "総務課", first_name:"太郎", corporate_no:"abcd2021001"},
+ {id: 3, email: "abcd2021002@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "総務課", first_name:"二郎", corporate_no:"abcd2021002"},
+ {id: 4, email: "abcd2021003@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "総務課", first_name:"三郎", corporate_no:"abcd2021003"},
+ {id: 5, email: "abcd1981001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "総務課", first_name:"課長", corporate_no:"abcd1981001"},
  {id: 6, email: "abcd1982001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "α工場製造", first_name:"製造部長", corporate_no:"abcd1982001"},
  {id: 7, email: "abcd1983001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "AA製造課", first_name:"課長", corporate_no:"abcd1983001"},
  {id: 8, email: "abcd1984001@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "BB製造課", first_name:"課長", corporate_no:"abcd1984001"},
- {id: 10, email: "abcd1981002@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "BB製造課", first_name:"課長補佐", corporate_no:"abcd1981002"},
+ {id: 9, email: "abcd1981002@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "BB製造課", first_name:"課長補佐", corporate_no:"abcd1981002"},
+ {id: 10, email: "abcd2021004@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "AA製造課", first_name:"一郎", corporate_no:"abcd2021004"},
+ {id: 11, email: "abcd2021005@abcd.co.jp", password: ENV['user_initial_pass'], password_confirmation: ENV['user_initial_pass'], family_name: "BB製造課", first_name:"一郎", corporate_no:"abcd2021005"},
 ])

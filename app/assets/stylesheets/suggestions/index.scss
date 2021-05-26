@@ -32,18 +32,18 @@ div.suggestions-field{
 }
 
 div.suggestion{
-  width: calc((100% - 100px) / 3);
-  height: auto;
+  width: calc((100% - 80px) / 3);
+  height: max-content;
   background-color: rgba(#9BF6FF, 0.2);
   margin: 20px 0;
   border: solid 1px #9BF6FF;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 div.dummy-suggestion{
-  width: calc((100% - 100px) / 3);
+  width: calc((100% - 80px) / 3);
   height: 100px;
   margin: 20px 0;
 }
@@ -97,7 +97,7 @@ div.suggestion div.suggestion-top p.evaluated-point span.not-evaluated{
 
 
 .suggestion-category-index{
-  padding: 0px 0px 3px 25px ;
+  padding: 0 0 3px 25px ;
 }
 
 div.main div.suggestions-field div.suggestion-top p.evaluated-point {
@@ -127,8 +127,6 @@ div.main div.suggestions-field div.suggestion-top p.evaluated-point {
 .suggestion-bottom{
   text-align: center;
 }
-
-
 
 
 @media (max-width: 1000px) {
